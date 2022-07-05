@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    {{- $css := resources.Get "/css/main.scss" | toCSS -}}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  </head>
+  <body class="section-{{ .Section }} type-{{ .Type }} layout-{{ .Layout }} kind-{{ .Kind }}">
+
+    {{- block "header" . -}}
+      {{- partial "header.html" . -}}
+      {{- partial "breadcrumbs.html" . -}}
+      {{- partial "title.html" . -}}
+    {{- end -}}
+
+    {{- if not .IsHome -}}
+      <main id="main" class="main">
+        <div class="section">
+    {{- end -}}
+
+    {{- block "main" . -}}{{- end -}}
+
+    {{- if not .IsHome -}}
+        </div>
+      </main>
+    {{- end -}}
+
+    {{- block "footer" . -}}
+      {{- partial "footer.html" . -}}
+    {{- end -}}
+
+    {{- $js := resources.Get "/js/main.js" | js.Build -}}
+    <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+
+  </body>
+</html>

@@ -1,0 +1,24 @@
+baseURL: "https://ejeff.org/"
+title: "Jeff Fredrickson"
+languageCode: "en-US"
+
+params:
+  dateFormat: "January 2, 2006"
+
+taxonomies:
+  tag: tags
+
+module:
+  mounts:
+    - source: "assets"
+      target: "assets"
+    - source: "static"
+      target: "static"
+    - source: "node_modules/highlight.js/styles"
+      target: "static/vendor/highlight.js/styles"
+    - source: "node_modules/@fortawesome/fontawesome-free/css"
+      target: "static/vendor/fontawesome-free/css"
+    - source: "node_modules/@fortawesome/fontawesome-free/webfonts"
+      target: "static/vendor/fontawesome-free/webfonts"
+    - source: "node_modules/bulma"
+      target: "assets/vendor/bulma"

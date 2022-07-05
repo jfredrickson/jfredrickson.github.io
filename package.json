@@ -1,0 +1,16 @@
+{
+  "name": "ejeff",
+  "version": "1.0.0",
+  "description": "Hugo-based ejeff.org website",
+  "scripts": {
+    "start": "bin/dev"
+  },
+  "author": "Jeff Fredrickson <jeff@ejeff.org>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "bulma": "^0.9.4",
+    "highlight.js": "^11.5.1",
+    "jquery": "^3.6.0"
+  }
+}

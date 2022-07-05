@@ -1,0 +1,29 @@
+{{ define "header" }}
+  <div class="hero is-fullheight hero-image">
+    <div class="hero-head">
+      {{- partial "header.html" . -}}
+    </div>
+{{ end }}
+
+{{ define "main" }}
+  <div class="hero-body is-align-items-stretch">
+    <div class="container">
+      {{ if .Content }}
+      <div class="columns">
+        <div class="column is-half-tablet is-one-third-widescreen">
+          <div class="box content home-intro">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+
+{{ define "footer" }}
+    <div class="hero-foot">
+      {{- partial "footer.html" . -}}
+    </div>
+  </div>
+{{ end }}

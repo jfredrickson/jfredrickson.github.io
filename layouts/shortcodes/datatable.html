@@ -1,0 +1,24 @@
+<table>
+  {{ with (index .Site.Data.tables (.Get 0)) }}
+    {{ $headingKeys := slice}}
+    <thead>
+      <tr>
+        {{ range .headings }}
+          {{ range $headingKey, $headingText := . }}
+            {{ $headingKeys = $headingKeys | append $headingKey }}
+            <th>{{ $headingText }}</th>
+          {{ end }}
+        {{ end }}
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $content := .content }}
+        <tr>
+          {{ range $headingKeys }}
+            <td>{{ index $content . }}</td>
+          {{ end }}
+        </tr>
+      {{ end }}
+    </tbody>
+  {{ end }}
+</table>

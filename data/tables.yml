@@ -1,0 +1,12 @@
+macintosh-resource-forks:
+  headings:
+    - file: File
+    - type: Type
+    - creator: Creator
+  content:
+    - file: Disk Copy image (img)
+      type: dimg
+      creator: ddsk
+    - file: StuffIt archive (sit)
+      type: SIT!
+      creator: SITx

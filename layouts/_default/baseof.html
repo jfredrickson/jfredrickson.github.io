@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" class="section-{{ .Section | default "none" }} type-{{ .Type | default "none" }} layout-{{ .Layout | default "none" }} kind-{{ .Kind | default "none" }}">
   <head>
     <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,7 +7,7 @@
     {{- $css := resources.Get "/css/main.scss" | toCSS -}}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   </head>
-  <body class="section-{{ .Section }} type-{{ .Type }} layout-{{ .Layout }} kind-{{ .Kind }}">
+  <body>
 
     {{- block "header" . -}}
       {{- partial "header.html" . -}}
@@ -16,7 +16,7 @@
     {{- end -}}
 
     {{- if not .IsHome -}}
-      <main id="main" class="main">
+      <main id="main">
         <div class="section">
     {{- end -}}
 

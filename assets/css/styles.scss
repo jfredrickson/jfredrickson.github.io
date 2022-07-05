@@ -1,8 +1,3 @@
-.main {
-  background-color: $white;
-  padding: 1rem 0 2rem;
-}
-
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.04em;
 }
@@ -15,13 +10,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $family-sans-serif;
   }
 
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.5rem; }
-  h4 { font-size: 1.25rem; }
-  h5 { font-size: 1rem; }
-  h6 { font-size: 0.75rem; }
-
   p {
     line-height: 1.8em;
   }
@@ -29,35 +17,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-brand .navbar-item {
   text-transform: lowercase;
-  font-size: 1.8rem;
-  font-weight: $weight-semibold;
+  font-size: 1.4rem;
   letter-spacing: -0.04em;
   padding-left: 1rem;
-}
-
-.navbar-menu .navbar-item {
-  font-size: 1.1rem;
-  font-weight: $weight-semibold;
 }
 
 .navbar-burger {
   &:hover {
     background-color: transparent;
-    color: $grey-lighter;
-  }
-
-  &.is-active {
-    background-color: $grey-darker;
-    color: $grey-lighter;
   }
 }
 
 .navbar-cheezburger {
   padding: 15px;
-}
-
-.breadcrumb li {
-  font-size: 0.9rem;
 }
 
 .hero-image {
@@ -67,10 +39,4 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.title-section {
-  h1 {
-    margin-bottom: 0.5rem;
-  }
 }

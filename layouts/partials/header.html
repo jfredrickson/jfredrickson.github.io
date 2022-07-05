@@ -1,7 +1,7 @@
-<nav class="navbar is-spaced is-family-secondary" role="navigation" aria-label="main navigation">
+<nav class="navbar is-spaced is-family-secondary {{ if .IsHome }}is-dark{{ else }}is-light{{ end }}" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <a class="navbar-item has-text-weight-semibold" href="/">
         {{ .Site.Title }}
       </a>
 
@@ -18,7 +18,7 @@
 
       <div class="navbar-end">
         {{ range .Site.Menus.primary }}
-          <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+          <a class="navbar-item has-text-weight-semibold" href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}
       </div>
     </div>

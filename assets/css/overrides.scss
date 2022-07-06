@@ -6,27 +6,25 @@
 @import "../vendor/bulma/sass/utilities/functions.sass";
 
 $desktop: 840px + (2 * $gap);
+$container-max-width: $widescreen;
+
+$radius-large: 4px;
+
 $family-sans-serif: "Inter", "Helvetica Neue", sans-serif;
 $family-primary: "Lato", serif;
 $family-secondary: $family-sans-serif;
-$body-background-color: $white;
-// $navbar-background-color: $white-bis;
-// $navbar-background-color: $grey-darker;
-// $navbar-item-color: $white-ter;
-// $navbar-item-hover-color: $cyan;
-// $navbar-item-hover-background-color: transparent;
-// $navbar-burger-color: $grey-lighter;
-// $navbar-item-active-color: white;
+
 $primary: $cyan;
+$body-background-color: $white;
+
 $section-padding: 1rem;
 $section-padding-desktop: $section-padding;
 $section-padding-medium: $section-padding;
 $section-padding-large: $section-padding;
-$radius-large: 4px;
-$pre-padding: 0;
+
 $content-heading-weight: $weight-bold;
 $content-pre-padding: 0;
-$container-max-width: $widescreen;
+
 $footer-padding: 3rem 0 0.5rem;
 $footer-background-color: transparent;
 

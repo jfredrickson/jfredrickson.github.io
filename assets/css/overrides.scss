@@ -4,12 +4,9 @@
 
 @import "../vendor/bulma/sass/utilities/initial-variables.sass";
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 $desktop: 840px + (2 * $gap);
-$family-sans-serif: "Inter", sans-serif;
-$family-primary: "Merriweather", serif;
+$family-sans-serif: "Inter", "Helvetica Neue", sans-serif;
+$family-primary: "Lato", serif;
 $family-secondary: $family-sans-serif;
 $body-background-color: $white;
 // $navbar-background-color: $white-bis;

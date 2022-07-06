@@ -3,6 +3,13 @@
     <div class="columns">
       <div class="content column is-three-quarters-widescreen">
         <h1>{{ .Title }}</h1>
+        {{ with .Params.tags }}
+          <div class="mb-4">
+          {{ range . }}
+            <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
         {{ .Content }}
       </div>
     </div>

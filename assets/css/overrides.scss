@@ -3,6 +3,7 @@
 //
 
 @import "../vendor/bulma/sass/utilities/initial-variables.sass";
+@import "../vendor/bulma/sass/utilities/functions.sass";
 
 $desktop: 840px + (2 * $gap);
 $family-sans-serif: "Inter", "Helvetica Neue", sans-serif;

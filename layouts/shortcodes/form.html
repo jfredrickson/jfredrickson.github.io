@@ -1,0 +1,13 @@
+{{ $action := .Get "action" }}
+{{ $method := .Get "method" }}
+{{ $submit := .Get "submit" }}
+
+<form action="{{ $action }}" method="{{ $method }}">
+  {{ .Inner }}
+
+  <div class="field">
+    <div class="control">
+      <button class="button is-primary" type="submit">{{ $submit }}</button>
+    </div>
+  </div>
+</form>

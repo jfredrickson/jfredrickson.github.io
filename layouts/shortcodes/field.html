@@ -1,0 +1,21 @@
+{{ $name := .Get "name" }}
+{{ $type := .Get "type" }}
+{{ $label := .Get "label" }}
+{{ $icon := .Get "icon" }}
+{{ $required := .Get "required" }}
+
+<div class="field">
+  <label class="label" for="form-{{ $name }}">{{ $label }}</label>
+  <div class="control {{ if $icon }}has-icons-left{{ end }}">
+    {{- if eq $type "textarea" -}}
+      <textarea id="form-{{ $name }}" class="textarea" name="{{ $name }}" {{ if $required }}required{{ end }}></textarea>
+    {{- else -}}
+      <input id="form-{{ $name }}" class="input" type="{{ $type }}" name="{{ $name }}" {{ if $required }}required{{ end }}>
+    {{- end -}}
+    {{- if $icon -}}
+      <span class="icon is-left">
+        <i class="fas fa-{{ $icon }}"></i>
+      </span>
+    {{- end -}}
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="panel is-shadowless">
+  {{ range .Site.Data.contact }}
+    <a class="panel-block is-block" href="{{ .link }}">
+      <div class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <span class="panel-icon">
+              <i class="{{ .iconClass }}" aria-hidden="true"></i>
+            </span>
+            {{ .name }}
+          </div>
+        </div>
+        <div class="level-right mt-0">
+          <div class="level-item has-text-weight-bold">
+            {{ .username }}
+          </div>
+        </div>
+      </div>
+    </a>
+  {{ end }}
+</div>

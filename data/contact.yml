@@ -1,0 +1,19 @@
+- name: Email
+  iconClass: fas fa-envelope
+  username: "website@jeff.ejeff.org"
+  link: mailto:website@jeff.ejeff.org
+
+- name: GitHub (personal)
+  iconClass: fa-brands fa-github
+  username: "@jfredrickson"
+  link: https://github.com/jfredrickson
+
+- name: GitHub (work)
+  iconClass: fa-brands fa-github
+  username: "@jfredrickson5"
+  link: https://github.com/jfredrickson5
+
+- name: LinkedIn
+  iconClass: fa-brands fa-linkedin
+  username: Jeff Fredrickson
+  link: https://www.linkedin.com/in/jfredrickson5/

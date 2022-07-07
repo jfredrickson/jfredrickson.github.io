@@ -34,6 +34,10 @@ h1, h2, h3, h4, h5, h6 {
     color: findDarkColor($cyan);
   }
 
+  &.is-light .navbar-end .navbar-item {
+    color: findDarkColor($cyan);
+  }
+
   .navbar-brand .navbar-item {
     font-family: 'Bungee', sans-serif;
     font-size: 1.4rem;

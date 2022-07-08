@@ -1,5 +1,6 @@
 ---
 title: Let's Encrypt on TrueNAS
+description: Automating Let's Encrypt certificates on TrueNAS with Cloudflare DNS authentication
 tags:
   - truenas
 ---

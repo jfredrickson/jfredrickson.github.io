@@ -7,7 +7,7 @@
           <li>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             {{ range .Params.Tags }}
-              <span class="tag is-family-secondary">{{ . }}</span>
+              {{- partial "tag" . -}}
             {{ end }}
           </li>
         {{ end }}

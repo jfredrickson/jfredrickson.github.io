@@ -4,10 +4,10 @@
       <div class="content column is-three-quarters-widescreen">
         {{ with .Params.tags }}
           <div class="mb-4">
-          {{ range . }}
-            <span class="tag">{{ . }}</span>
-          {{ end }}
-        </div>
+            {{ range . }}
+              {{- partial "tag" . -}}
+            {{ end }}
+          </div>
         {{ end }}
         {{ .Content }}
       </div>

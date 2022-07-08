@@ -20,7 +20,7 @@
                 {{ with .Params.Tags }}
                   <p>
                     {{ range . }}
-                      <span class="tag is-family-secondary">{{ . }}</span>
+                      {{- partial "tag" . -}}
                     {{ end }}
                   </p>
                 {{ end }}

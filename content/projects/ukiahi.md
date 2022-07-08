@@ -4,6 +4,10 @@ description: Just for fun, the 1997 Ukiah High School website
 links:
   - text: Ukiah High School (Archived)
     href: https://archive.tensouth.net/uhs.zapcom.net/
+tags:
+  - html-4.01
+  - cgi-bin
+  - netscape
 ---
 
 I dusted off an old but intact copy of the Ukiah High School website that I found on the Internet Archive. A fellow student and I built this website back in 1997 when we were seniors.

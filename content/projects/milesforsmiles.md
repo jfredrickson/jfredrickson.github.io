@@ -1,6 +1,12 @@
 ---
 title: "Operation: Miles for Smiles"
 description: Back end development for a charity project
+tags:
+  - ruby
+  - ruby-on-rails
+  - responsive-design
+  - postgresql
+  - heroku
 ---
 
 Operation: Miles for Smiles was a fundraising drive in which a group of bicyclists toured from California to Florida to raise funds for charity. They needed a website to promote their project and to allow donors and the public to track their progress across the country in real time.

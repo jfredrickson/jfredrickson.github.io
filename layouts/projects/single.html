@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="columns is-widescreen is-flex-direction-row-reverse">
+      <div class="content column is-half-widescreen">
+        {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}
+          <figure class="image mx-0">
+            <img src="{{ .RelPermalink }}">
+          </figure>
+        {{ end }}
+      </div>
+      <div class="content column is-half-widescreen is-flex-wrap-wrap">
+        {{ .Content }}
+        {{ with .Params.Links }}
+          {{ range . }}
+            <p>
+              <a href="{{ .href }}">{{ .text }}</a>
+            </p>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}

@@ -8,13 +8,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: $family-secondary;
   }
 
-  h1 { font-size: 1.75rem; }
-  h2 { font-size: 1.375rem; }
-  h3 { font-size: 1.25rem; }
-  h4 { font-size: 1.125rem; }
-  h5 { font-size: 1rem; }
-  h6 { font-size: 0.9rem; }
-
   ul ul, ol ol, ol ul, ul ol {
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
@@ -25,7 +18,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   pre {
+    code {
+      padding: 0;
+    }
+
     margin: 0.25rem 0;
+    padding: 0.5rem;
     border-radius: $radius-large;
   }
 }

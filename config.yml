@@ -8,14 +8,16 @@ params:
 taxonomies:
   tag: tags
 
+markup:
+  highlight:
+    noClasses: false
+
 module:
   mounts:
     - source: "assets"
       target: "assets"
     - source: "static"
       target: "static"
-    - source: "node_modules/highlight.js/styles"
-      target: "static/vendor/highlight.js/styles"
     - source: "node_modules/@fortawesome/fontawesome-free/css"
       target: "static/vendor/fontawesome-free/css"
     - source: "node_modules/@fortawesome/fontawesome-free/webfonts"

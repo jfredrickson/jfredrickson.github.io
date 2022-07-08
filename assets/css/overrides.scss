@@ -13,8 +13,13 @@ $radius-large: 4px;
 $family-primary: "Lato", serif;
 $family-secondary: "Inter", "Helvetica Neue", sans-serif;
 
+$subtitle-family: $family-secondary;
+$subtitle-weight: $weight-bold;
+$subtitle-color: $grey;
+
 $primary: $cyan;
 $body-background-color: $white-bis;
+$shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.2);
 
 $section-padding: 1rem;
 $section-padding-desktop: $section-padding;

@@ -803,7 +803,7 @@ table th {
 .box {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.05);
   color: #4a4a4a;
   display: block;
   padding: 1.25rem; }
@@ -3392,7 +3392,7 @@ a.tag:hover {
 .card {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.05);
   color: #4a4a4a;
   max-width: 100%;
   position: relative; }
@@ -3499,7 +3499,7 @@ a.tag:hover {
 .dropdown-content {
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.05);
   padding-bottom: 0.5rem;
   padding-top: 0.5rem; }
 
@@ -4813,7 +4813,7 @@ a.navbar-item,
 
 .panel {
   border-radius: 8px;
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.05);
   font-size: 1rem; }
   .panel:not(:last-child) {
     margin-bottom: 1.5rem; }
@@ -8228,11 +8228,11 @@ h1, h2, h3, h4, h5, h6 {
   .content pre code {
     padding: 0; }
 
-.content figure img {
-  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+figure img {
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.05);
   border: none; }
 
-.content .card figure img {
+.card figure img {
   box-shadow: none;
   border-bottom: 1px solid #ededed; }
 
@@ -8262,3 +8262,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .breadcrumbs-section li {
   font-size: 0.75rem; }
+
+.card {
+  height: 100%; }

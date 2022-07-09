@@ -26,16 +26,16 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem;
     border-radius: $radius-large;
   }
+}
 
-  figure img {
-    box-shadow: $shadow;
-    border: none;
-  }
+figure img {
+  box-shadow: $shadow;
+  border: none;
+}
 
-  .card figure img {
-    box-shadow: none;
-    border-bottom: 1px solid $grey-lightest;
-  }
+.card figure img {
+  box-shadow: none;
+  border-bottom: 1px solid $grey-lightest;
 }
 
 .navbar {
@@ -78,4 +78,8 @@ h1, h2, h3, h4, h5, h6 {
   li {
     font-size: 0.75rem;
   }
+}
+
+.card {
+  height: 100%;
 }

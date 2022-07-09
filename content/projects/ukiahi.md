@@ -5,7 +5,7 @@ links:
   - text: Ukiah High School (Archived)
     href: https://archive.tensouth.net/uhs.zapcom.net/
 tags:
-  - html-4.01
+  - html4.01
   - cgi-bin
   - netscape
 ---

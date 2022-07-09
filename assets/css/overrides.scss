@@ -5,7 +5,8 @@
 @import "../vendor/bulma/sass/utilities/initial-variables.sass";
 @import "../vendor/bulma/sass/utilities/functions.sass";
 
-$radius-large: 4px;
+$radius-large: 8px;
+$card-radius: $radius-large;
 
 $family-primary: "Lato", serif;
 $family-secondary: "Inter", "Helvetica Neue", sans-serif;
@@ -16,7 +17,7 @@ $subtitle-color: $grey;
 
 $primary: $cyan;
 $body-background-color: $white-bis;
-$shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.2);
+$shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 2px 8px 0 rgba(0, 0, 0, 0.03);
 
 $section-padding: 1rem;
 $section-padding-desktop: $section-padding;

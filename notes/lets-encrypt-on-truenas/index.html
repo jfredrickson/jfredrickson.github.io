@@ -1,0 +1,40 @@
+<!doctype html><html lang=en-us class="section-notes type-notes layout-none kind-page"><head><title>Let's Encrypt on TrueNAS | Jeff Fredrickson</title><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><link rel=stylesheet href=/css/main.css></head><body><nav class="navbar is-spaced is-family-secondary is-light" role=navigation aria-label="main navigation"><div class=container><div class=navbar-brand><a class=navbar-item href=/>Jeff Fredrickson</a>
+<a role=button class=navbar-burger aria-label=menu aria-expanded=false data-target=navbar><span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span></a></div><div id=navbar class=navbar-menu><div class=navbar-start></div><div class=navbar-end><a class="navbar-item has-text-weight-semibold" href=/notes/>Notes</a>
+<a class="navbar-item has-text-weight-semibold" href=/projects/>Projects</a>
+<a class="navbar-item has-text-weight-semibold" href=/contact/>Contact</a></div></div></div></nav><div class="section breadcrumbs-section is-family-secondary py-2"><div class=container><nav class="breadcrumb has-arrow-separator" aria-label=breadcrumbs><ul><li><a href=/>Home</a></li><li><a href=/notes/>Notes</a></li><li class=is-active><a href=# aria-current=page>Let's Encrypt on TrueNAS</a></li></ul></nav></div></div><div class="section title-section pb-0"><div class=container><div class=content><h1 class=mb-1>Let's Encrypt on TrueNAS</h1><p class=subtitle>Automating Let's Encrypt certificates on TrueNAS with Cloudflare DNS authentication</p></div></div></div><main id=main><div class=section><div class=container><div class=columns><div class="content column is-three-quarters-widescreen"><div class=mb-4><span class="tag is-family-secondary"><a href=/tags/truenas>truenas</a></span></div><p>This is how I use <a href=https://letsencrypt.org/>Let&rsquo;s Encrypt</a> certificates on TrueNAS with Cloudflare as a DNS authenticator. TrueNAS already has built-in support for ACME DNS authentication, but the only DNS authenticator it supports is Route 53.</p><p>This process will create a certbot jail that:</p><ul><li>Configures <code>certbot</code> to get a Let&rsquo;s Encrypt wildcard certificate</li><li>Runs <code>certbot renew</code> every 12 hours</li><li>Saves certificates to a dataset so that they can be used by other services</li><li>Deploys renewed certificates to the TrueNAS UI</li></ul><p>You can skip the stuff about creating a dataset and mounting it to the jail if you don&rsquo;t want to use the certificates for anything other than the TrueNAS UI.</p><h2 id=create-a-jail>Create a jail</h2><ol><li>Create a dataset to store the certificates: <code>/mnt/tank1/letsencrypt</code><ul><li>Owner: <code>root:wheel</code></li><li>Mode:<code>0700</code></li></ul></li><li>Create a new jail named <code>certbot</code><ul><li>Disable VNET; it just complicates the network stack for this use case</li></ul></li><li>Mount <code>/mnt/tank1/letsencrypt</code> to <code>/usr/local/etc/letsencrypt</code> within the jail</li><li>Start the jail</li><li>Open a console to the jail (<code>iocage console certbot</code> or via the TrueNAS UI) and carry out the rest of these steps within the jail</li></ol><h2 id=set-up-the-jail>Set up the jail</h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Install prerequisites</span>
+</span></span><span class=line><span class=cl>pkg update
+</span></span><span class=line><span class=cl>pkg install python38 py38-certbot py38-certbot-dns-cloudflare git
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Install the deploy script</span>
+</span></span><span class=line><span class=cl>git clone https://github.com/danb35/deploy-freenas.git /opt/deploy-freenas
+</span></span><span class=line><span class=cl>cp /opt/deploy-freenas/deploy_config.example /opt/deploy-freenas/deploy_config
+</span></span><span class=line><span class=cl><span class=c1># Now configure the deploy script by editing /opt/deploy-freenas/deploy_config</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Configure Cloudflare credentials</span>
+</span></span><span class=line><span class=cl>cat <span class=s>&lt;&lt;- EOF &gt; /usr/local/etc/certbot_cloudflare.conf
+</span></span></span><span class=line><span class=cl><span class=s>dns_cloudflare_email = &#34;Cloudflare email address here&#34;
+</span></span></span><span class=line><span class=cl><span class=s>dns_cloudflare_api_key = &#34;API key from Cloudflare here&#34;
+</span></span></span><span class=line><span class=cl><span class=s>EOF</span>
+</span></span><span class=line><span class=cl>chown root:wheel /usr/local/etc/certbot_cloudflare.conf
+</span></span><span class=line><span class=cl>chmod <span class=m>600</span> /usr/local/etc/certbot_cloudflare.conf
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Run certbot to get the certificates for the first time (fill in the domain and email address)</span>
+</span></span><span class=line><span class=cl>certbot certonly -d <span class=s2>&#34;*.example.com&#34;</span> -m <span class=s2>&#34;your.email@example.com&#34;</span> --dns-cloudflare --dns-cloudflare-credentials /usr/local/etc/certbot_cloudflare.conf --preferred-challenges dns-01
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Ensure the deploy script can successfully deploy the certificate to TrueNAS</span>
+</span></span><span class=line><span class=cl>/opt/deploy-freenas/deploy_freenas.py
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Create a cron job</span>
+</span></span><span class=line><span class=cl>cat <span class=s>&lt;&lt;- EOF &gt;&gt; /etc/crontab
+</span></span></span><span class=line><span class=cl><span class=s># Renew Let&#39;s Encrypt certificates
+</span></span></span><span class=line><span class=cl><span class=s>0       0,12    *       *       *       root    certbot renew --deploy-hook /opt/deploy-freenas/deploy_freenas.py
+</span></span></span><span class=line><span class=cl><span class=s>EOF</span></span></span></code></pre></div><p>Finally, confirm that the new certificate is in use by TrueNAS. The Let&rsquo;s Encrypt certificates should also show up in the new dataset (<code>/mnt/tank1/letsencrypt</code>) for use by other services.</p><h2 id=resources>Resources</h2><ul><li><a href="https://certbot.eff.org/instructions?ws=webproduct&os=freebsd">Official certbot instructions for FreeBSD</a></li><li><a href=https://github.com/danb35/deploy-freenas>deploy-freenas script</a></li></ul></div></div></div></div></main><footer class="footer is-family-secondary"><div class=container><div class="content has-text-centered"><small><a href=https://github.com/jfredrickson/jfredrickson.github.io><span class=icon-text><span class=icon><i class="fas fa-brands fa-github"></i></span>
+<span>GitHub</span></span></a></small>
+/
+<small>code: GPLv3</small>
+/
+<small xmlns:cc=http://creativecommons.org/ns# xmlns:dct=http://purl.org/dc/terms/><a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target=_blank rel="license noopener noreferrer" style=display:inline-block>content: CC BY 4.0
+<img style=height:1.2em!important;margin-left:3px;vertical-align:text-bottom src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
+<img style=height:1.2em!important;margin-left:3px;vertical-align:text-bottom src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a></small></div></div></footer><script type=text/javascript src=/js/main.js></script></body></html>

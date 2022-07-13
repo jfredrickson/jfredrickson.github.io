@@ -38,6 +38,11 @@ figure img {
   border-bottom: 1px solid $grey-lightest;
 }
 
+.box figure img {
+  box-shadow: none;
+  border: none;
+}
+
 .navbar {
   &.is-light .navbar-brand .navbar-item {
     color: findDarkColor($cyan);

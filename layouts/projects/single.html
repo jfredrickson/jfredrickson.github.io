@@ -1,11 +1,12 @@
 {{ define "main" }}
   <div class="container">
-    <div class="columns is-desktop is-flex-direction-row-reverse">
-      <div class="content column is-half-desktop mb-0">
+    <div class="columns is-tablet is-flex-direction-row-reverse">
+      <div class="content column is-half-tablet mb-0">
         {{ $title := .Title }}
         {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}
+          {{ $image := .Fit "800x600"}}
           <figure class="image m-0 mb-2">
-            <img src="{{ .RelPermalink }}" alt="Screenshot of {{ $title }}">
+            <img src="{{ $image.RelPermalink }}" alt="Screenshot of {{ $title }}">
           </figure>
         {{ end }}
         {{ with .Params.Tags }}
@@ -16,7 +17,7 @@
           </p>
         {{ end }}
       </div>
-      <div class="content column is-half-desktop is-flex-wrap-wrap">
+      <div class="content column is-half-tablet is-flex-wrap-wrap">
         {{ .Content }}
         {{ with .Params.Links }}
           {{ range . }}

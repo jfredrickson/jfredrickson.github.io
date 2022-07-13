@@ -7,10 +7,12 @@
           <div class="column is-half-tablet is-one-third-desktop">
             <div class="card">
               <div class="card-image">
+                {{ $title := .Title }}
                 {{ $link := .RelPermalink }}
                 {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}
+                  {{ $image := .Fit "800x600" }}
                   <figure class="image is-16by9 mx-0">
-                    <a href="{{ $link }}"><img src="{{ .RelPermalink }}"></a>
+                    <a href="{{ $link }}"><img src="{{ $image.RelPermalink }}" alt="Screenshot of {{ $title }}"></a>
                   </figure>
                 {{ end }}
               </div>

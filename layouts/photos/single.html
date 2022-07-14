@@ -2,14 +2,28 @@
   <div class="container">
     <div class="content">
       {{ .Content }}
-      <div class="columns is-multiline">
+      <div class="columns is-multiline" id="gallery">
         {{ range .Resources.ByType "image" }}
-          <div class="column is-half-tablet is-one-third-desktop">
-            <div class="box p-0">
-              <figure class="image is-3by2 mx-0">
-                {{ $image := .Fit "800x600" }}
-                <img src="{{ $image.RelPermalink }}">
+          <div class="column is-one-third-tablet is-one-quarter-desktop">
+            <div class="box p-3 m-0">
+              <figure class="image m-0" data-src="{{ .RelPermalink }}" data-sub-html="#photo-caption-{{ .Name | anchorize }}">
+                {{ $image := .Fit "800x800" }}
+                <a href="#"><img src="{{ $image.RelPermalink }}"></a>
               </figure>
+            </div>
+            <div class="is-hidden" id="photo-caption-{{ .Name | anchorize }}">
+              <p class="photo-title">{{ .Title }}</p>
+              {{ with .Exif }}
+                <p class="photo-exif">
+                  {{ with .Tags.Make }}{{ . }}{{ end }}
+                  {{ with .Tags.Model }}{{ . }}{{ end }}
+                  {{ with .Tags.LensModel }}{{ . }}{{ end }}
+                </p>
+                <p class="photo-exif">
+                  {{ with .Tags.ApertureValue }}f/{{ lang.FormatNumber 1 . }}{{ end }}
+                  {{ with .Tags.ExposureTime }}{{ . }}s{{ end }}
+                </p>
+              {{ end }}
             </div>
           </div>
         {{ end }}

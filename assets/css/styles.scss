@@ -36,11 +36,34 @@ figure img {
 .card figure img {
   box-shadow: none;
   border-bottom: 1px solid $grey-lightest;
+  object-fit: cover;
+  height: 240px;
 }
 
-.box figure img {
-  box-shadow: none;
-  border: none;
+.section-photos {
+  .box {
+    border-radius: 0;
+  }
+
+  .box {
+    line-height: 0;
+  }
+
+  .box figure img {
+    box-shadow: none;
+    border: none;
+  }
+
+  .photo-title {
+    color: $grey-lighter;
+    font-size: 1.25rem;
+    font-weight: $weight-bold;
+  }
+
+  .photo-exif {
+    font-size: 0.9rem;
+    color: $grey-light;
+  }
 }
 
 .navbar {

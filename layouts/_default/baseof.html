@@ -4,32 +4,41 @@
     <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+
+    {{- $theme := resources.Get "/js/theme.js" | js.Build -}}
+    <script type="text/javascript" src="{{ $theme.RelPermalink }}"></script>
+
+    {{- if .Site.IsServer -}}
+      {{- $random := md5 now.Unix -}}
+      {{- $tailwind := resources.Get "/css/tailwind.css" | resources.PostCSS | resources.ExecuteAsTemplate (printf "tailwind.dev.%s.css" $random) . -}}
+      <link rel="stylesheet" href="{{ $tailwind.RelPermalink }}">
+    {{- else -}}
+      {{- $tailwind := resources.Get "/css/tailwind.css" | resources.PostCSS | resources.Fingerprint | resources.Minify -}}
+      <link rel="stylesheet" href="{{ $tailwind.RelPermalink }}">
+    {{- end -}}
+
     {{- $css := resources.Get "/css/main.scss" | toCSS -}}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
   </head>
   <body>
 
-    {{- block "header" . -}}
-      {{- partial "header.html" . -}}
-      {{- partial "breadcrumbs.html" . -}}
-      {{- partial "title.html" . -}}
-    {{- end -}}
+    <div class="flex flex-col min-h-screen">
 
-    {{- if not .IsHome -}}
-      <main id="main">
-        <div class="section">
-    {{- end -}}
+      {{- block "header" . -}}
+        {{- partial "header.html" . -}}
+        {{- partial "breadcrumbs.html" . -}}
+        {{- partial "title.html" . -}}
+      {{- end -}}
 
-    {{- block "main" . -}}{{- end -}}
-
-    {{- if not .IsHome -}}
-        </div>
+      <main id="main" class="main flex-grow">
+        {{- block "main" . -}}{{- end -}}
       </main>
-    {{- end -}}
 
-    {{- block "footer" . -}}
-      {{- partial "footer.html" . -}}
-    {{- end -}}
+      {{- block "footer" . -}}
+        {{- partial "footer.html" . -}}
+      {{- end -}}
+
+    </div>
 
     {{- $js := resources.Get "/js/main.js" | js.Build -}}
     <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>

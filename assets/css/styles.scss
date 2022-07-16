@@ -1,41 +1,15 @@
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: -0.04em;
-}
 
-.content {
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 740;
-    font-family: $family-secondary;
-  }
+$shadow: 0 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.05);
 
-  ul ul, ol ol, ol ul, ul ol {
-    margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  code {
-    padding: 0.125rem;
-  }
-
-  pre {
-    code {
-      padding: 0;
-    }
-
-    margin: 0.25rem 0;
-    padding: 0.5rem;
-    border-radius: $radius-large;
-  }
-}
 
 figure img {
-  box-shadow: $shadow;
+  // box-shadow: $shadow;
   border: none;
 }
 
 .card figure img {
   box-shadow: none;
-  border-bottom: 1px solid $grey-lightest;
+  // border-bottom: 1px solid $grey-lightest;
   object-fit: cover;
   height: 240px;
 }
@@ -55,56 +29,14 @@ figure img {
   }
 
   .photo-title {
-    color: $grey-lighter;
+    // color: $grey-lighter;
     font-size: 1.25rem;
-    font-weight: $weight-bold;
+    // font-weight: $weight-bold;
   }
 
   .photo-exif {
     font-size: 0.9rem;
-    color: $grey-light;
-  }
-}
-
-.navbar {
-  &.is-light .navbar-brand .navbar-item {
-    color: findDarkColor($cyan);
-  }
-
-  &.is-light .navbar-end .navbar-item {
-    color: findDarkColor($cyan);
-  }
-
-  .navbar-brand .navbar-item {
-    font-family: 'Bungee', sans-serif;
-    font-size: 1.4rem;
-    letter-spacing: -0.04em;
-    padding: 0 1rem;
-  }
-
-  .navbar-burger {
-    &:hover {
-      background-color: transparent;
-    }
-  }
-
-  .navbar-cheezburger {
-    padding: 15px;
-  }
-}
-
-.hero-image {
-  background-image:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent, transparent, transparent),
-    url("/images/oranjestad.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.breadcrumbs-section {
-  li {
-    font-size: 0.75rem;
+    // color: $grey-light;
   }
 }
 

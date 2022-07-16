@@ -1,21 +1,19 @@
-<div class="section breadcrumbs-section is-family-secondary py-2">
-  <div class="container">
-    <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
-      <ul>
-        {{ template "breadcrumb_items" (dict "p1" . "p2" .) }}
-      </ul>
-    </nav>
-  </div>
+<div class="container">
+  <nav aria-label="breadcrumbs">
+    <ul class="p-0 text-xs font-sans list-none">
+      {{ template "breadcrumbItems" (dict "p1" . "p2" .) }}
+    </ul>
+  </nav>
 </div>
 
-{{ define "breadcrumb_items" }}
+{{ define "breadcrumbItems" }}
   {{ if .p1.Parent }}
-    {{ template "breadcrumb_items" (dict "p1" .p1.Parent "p2" .p2) }}
+    {{ template "breadcrumbItems" (dict "p1" .p1.Parent "p2" .p2) }}
   {{ end }}
 
   {{ if eq .p1 .p2 }}
-    <li class="is-active"><a href="#" aria-current="page">{{ .p1.Title }}</a></li>
+    <li class="inline" aria-current="page">{{ .p1.Title }}</li>
   {{ else }}
-    <li><a href="{{ .p1.RelPermalink }}">{{ .p1.Title }}</a></li>
+    <li class="inline"><a href="{{ .p1.RelPermalink }}">{{ .p1.Title }}</a><span class="px-2 after:content-['\02192']"></span></span></li>
   {{ end }}
 {{ end }}

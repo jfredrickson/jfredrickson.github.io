@@ -1,9 +1,16 @@
+// Icons
 @import "../vendor/fontawesome-free/css/all.css";
 @import "../vendor/fontawesome-free/css/brands.css";
+
+// Photo gallery
 @import "../vendor/lightgallery/css/lightgallery.css";
 @import "../vendor/lightgallery/css/lg-fullscreen.css";
 @import "../vendor/lightgallery/css/lg-zoom.css";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap');
+@import '../vendor/charter/fonts/stylesheet.css';
+
+// Syntax highlighting
 @import "base16-tomorrow-night";
-@import "fonts";
-@import "overrides";
-@import "styles";

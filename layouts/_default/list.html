@@ -1,14 +1,15 @@
 {{ define "main" }}
   <div class="container">
-    <div class="content">
-      {{ .Content }}
-      <ul>
-        {{ range .Pages }}
-          <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          </li>
-        {{ end }}
-      </ul>
-    </div>
+    {{ .Content }}
+    <ul>
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ range .Params.Tags }}
+            {{- partial "tag" . -}}
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
   </div>
 {{ end }}

@@ -1,28 +1,66 @@
-<footer class="footer is-family-secondary">
+<footer class="mt-12 p-8 font-sans bg-stone-100 dark:bg-neutral-900">
   <div class="container">
-    <div class="content has-text-centered">
-      <small>
+    <div class="flex items-center justify-between">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-start text-xs">
         <a href="https://github.com/jfredrickson/jfredrickson.github.io">
-          <span class="icon-text">
-            <span class="icon">
-              <i class="fas fa-brands fa-github"></i>
-            </span>
-            <span>GitHub</span>
-          </span>
+          <span class="fas fa-brands fa-github"></span>
+          <span>GitHub</span>
         </a>
-      </small>
-      /
-      <small>
-        <a href="https://github.com/jfredrickson/jfredrickson.github.io/blob/main/LICENSE">code: GPLv3</a>
-      </small>
-      /
-      <small xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
-        <a href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-          content: CC BY 4.0
-          <img style="height:1.2em!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
-          <img style="height:1.2em!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1">
-        </a>
-      </small>
+        <span class="hidden sm:flex mx-2">/</span>
+        <span>
+          code: <a href="https://github.com/jfredrickson/jfredrickson.github.io/blob/main/LICENSE">GPLv3</a>
+        </span>
+        <span class="hidden sm:flex mx-2">/</span>
+        <span class="flex" xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+          <span>content:</span>
+          <a class="flex items-center mx-1" href="http://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer">
+            CC BY 4.0
+            <img class="h-4 w-4 ml-1" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1">
+            <img class="h-4 w-4 ml-1" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1">
+          </a>
+        </span>
+      </div>
+      <div class="flex justify-center relative">
+        <button type="button" class="theme-toggle-button p-2 text-sky-700 dark:text-sky-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="block dark:hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <!-- heroicons outline sun -->
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="hidden dark:block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <!-- heroicons outline moon -->
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+        <ul class="theme-toggle-menu hidden absolute z-50 bottom-4 px-1 py-1 list-none rounded-lg bg-white dark:bg-black">
+          <li>
+            <a class="theme-toggle-menu-item flex items-center py-1 px-3 text-sm rounded-md hover:text-white hover:bg-sky-700" data-theme="dark" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <!-- heroicons outline moon -->
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+              <span class="ml-1">Dark</span>
+            </a>
+          </li>
+          <li>
+            <a class="theme-toggle-menu-item flex items-center py-1 px-3 text-sm rounded-md hover:text-white hover:bg-sky-700" data-theme="light" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <!-- heroicons outline sun -->
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <span class="ml-1">Light</span>
+            </a>
+          </li>
+          <li>
+            <a class="theme-toggle-menu-item flex items-center py-1 px-3 text-sm rounded-md hover:text-white hover:bg-sky-700" data-theme="auto" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <!-- heroicons outline desktop-computer -->
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span class="ml-1">Auto</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>

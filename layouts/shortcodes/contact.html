@@ -1,19 +1,14 @@
-<div class="panel is-shadowless">
+<div class="my-4 w-full lg:w-3/4 divide-y">
   {{ range .Site.Data.contact }}
-    <a class="panel-block is-block" href="{{ .link }}">
-      <div class="level">
-        <div class="level-left">
-          <div class="level-item">
-            <span class="panel-icon">
-              <i class="{{ .iconClass }}" aria-hidden="true"></i>
-            </span>
-            {{ .name }}
-          </div>
+    <a class="flex flex-col p-2 font-sans text-sm dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-sky-900" href="{{ .link }}">
+      <div class="flex flex-col items-center md:flex-row md:justify-between">
+        <div>
+          <i class="mr-1 text-neutral-500 {{ .iconClass }}" aria-hidden="true"></i>
+          {{ .name }}
         </div>
-        <div class="level-right mt-0">
-          <div class="level-item has-text-weight-bold">
-            {{ .username }}
-          </div>
+
+        <div class="font-semibold">
+          {{ .username }}
         </div>
       </div>
     </a>

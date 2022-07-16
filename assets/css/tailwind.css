@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 18px;
+  }
+
+  @media(prefers-color-scheme: dark) {
+    html {
+      @apply dark;
+    }
+  }
+
+  body {
+    @apply bg-neutral-50 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-100 leading-6 font-serif transition-colors;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply mt-4 font-sans font-bold tracking-tight leading-tight;
+  }
+
+  h1 { @apply text-4xl font-extrabold tracking-tighter; }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-2xl; }
+  h4 { @apply text-xl; }
+  h5 { @apply text-lg; }
+  h6 { @apply text-base; }
+
+  ul {
+    @apply pl-8 list-disc;
+  }
+
+  ol {
+    @apply pl-8 list-decimal;
+  }
+
+  ul ul, ol ol, ul ol, ol ul {
+    @apply my-1;
+  }
+
+  p, ul, ol, pre, table {
+    @apply my-4;
+  }
+
+  a {
+    @apply text-sky-700 dark:text-sky-300;
+  }
+
+  code {
+    @apply p-0.5 text-xs bg-neutral-100 dark:bg-neutral-900 text-green-800 dark:text-green-300 transition-colors;
+  }
+
+  pre {
+    @apply p-2 overflow-x-scroll leading-tight rounded-lg;
+  }
+
+  pre code {
+    @apply p-0 m-0 bg-inherit dark:bg-inherit text-inherit;
+  }
+
+  table {
+    @apply w-full;
+  }
+
+  thead {
+    @apply border-b-2 border-neutral-300 dark:border-neutral-700 font-sans;
+  }
+
+  th {
+    @apply py-2 text-left;
+  }
+
+  td {
+    @apply py-2;
+  }
+
+  tbody tr {
+    @apply border-y border-neutral-300 dark:border-neutral-700;
+  }
+}
+
+@layer components {
+  .theme-toggle-button.is-active {
+    @apply bg-white dark:bg-black rounded-b-md;
+  }
+
+  .button {
+    @apply px-3.5 py-1.5 text-sm text-white font-sans font-semibold rounded-md;
+  }
+
+  .button.primary {
+    @apply bg-cyan-500 hover:bg-cyan-600 transition-colors;
+  }
+}
+
+/* Unique styles for the home page */
+
+.kind-home nav, .dark.kind-home nav  {
+  @apply bg-transparent text-white;
+}
+
+.kind-home nav a, .dark.kind-home nav a {
+  @apply text-white border-none hover:bg-transparent;
+}
+
+.kind-home .theme-toggle-button {
+  @apply hidden;
+}
+
+.kind-home footer, .dark.kind-home footer {
+  @apply bg-transparent text-neutral-700;
+}
+
+.kind-home footer, .dark.kind-home footer a {
+  @apply bg-transparent text-sky-700;
+}

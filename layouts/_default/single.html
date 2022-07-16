@@ -1,16 +1,10 @@
 {{ define "main" }}
   <div class="container">
-    <div class="columns">
-      <div class="content column is-three-quarters-widescreen">
-        {{ with .Params.tags }}
-          <div class="mb-4">
-            {{ range . }}
-              {{- partial "tag" . -}}
-            {{ end }}
-          </div>
-        {{ end }}
-        {{ .Content }}
-      </div>
+    <div class="w-full xl:w-3/4">
+      {{ range .Params.tags }}
+        {{- partial "tag" . -}}
+      {{ end }}
+      {{ .Content }}
     </div>
   </div>
 {{ end }}

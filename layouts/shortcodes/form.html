@@ -3,20 +3,20 @@
 {{ $submit := .Get "submit" }}
 {{ $captcha := .Get "captcha" }}
 
-<form action="{{ $action }}" method="{{ $method }}">
-  {{ .Inner }}
+<div class="w-full lg:w-3/4">
+  <form action="{{ $action }}" method="{{ $method }}">
+    {{ .Inner }}
 
-  {{ if $captcha }}
-    <div class="h-captcha" data-sitekey="78d0d140-50f5-47d3-9dc2-be900dcafb64" data-callback="handleCaptchaResponse"></div>
-    <p id="captcha-required-message" class="notification is-danger is-hidden">Please complete the captcha first.</p>
-  {{ end }}
+    {{ if $captcha }}
+      <div class="h-captcha" data-sitekey="78d0d140-50f5-47d3-9dc2-be900dcafb64" data-callback="handleCaptchaResponse"></div>
+      <p id="captcha-required-message" class="hidden px-5 py-4 font-sans font-semibold text-sm text-white bg-red-500 rounded-md">Please complete the captcha first.</p>
+    {{ end }}
 
-  <div class="field">
-    <div class="control">
-      <button id="submit" class="button is-primary" type="submit">{{ $submit }}</button>
+    <div class="my-2">
+      <button id="submit" class="button primary" type="submit">{{ $submit }}</button>
     </div>
-  </div>
-</form>
+  </form>
+</div>
 
 {{ if $captcha }}
   <script src="https://js.hcaptcha.com/1/api.js"></script>
@@ -27,13 +27,13 @@
       document.getElementById('submit').addEventListener('click', function (event) {
         if (document.querySelector('[name=h-captcha-response]').value === '') {
           event.preventDefault();
-          $captchaMessage.classList.remove('is-hidden');
+          $captchaMessage.classList.remove('hidden');
         }
       });
     });
 
     function handleCaptchaResponse(response) {
-      $captchaMessage.classList.add('is-hidden');
+      $captchaMessage.classList.add('hidden');
     }
   </script>
 {{ end }}

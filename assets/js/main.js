@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   lightGallery(document.getElementById('gallery'), {
-    licenseKey: '0000-0000-000-0000',
+    licenseKey: 'B0A4E2E0-81C4462E-93DC60B9-303A6D26',
     plugins: [lgFullscreen, lgZoom],
     speed: 250,
     backdropDuration: 100,

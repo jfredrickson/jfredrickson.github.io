@@ -19,11 +19,14 @@
 </div>
 
 {{ if $captcha }}
-  <script src="https://js.hcaptcha.com/1/api.js"></script>
   <script>
     const $captchaMessage = document.getElementById('captcha-required-message');
 
     document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.h-captcha').forEach($captcha => {
+        $captcha.dataset.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      });
+
       document.getElementById('submit').addEventListener('click', function (event) {
         if (document.querySelector('[name=h-captcha-response]').value === '') {
           event.preventDefault();
@@ -36,4 +39,5 @@
       $captchaMessage.classList.add('hidden');
     }
   </script>
+  <script src="https://js.hcaptcha.com/1/api.js"></script>
 {{ end }}

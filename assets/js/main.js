@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         $closeIcon.classList.toggle('block');
         $closeIcon.classList.toggle('hidden');
       }
-      $navItems.classList.toggle('hidden');
+      $navItems.classList.toggle('max-h-0');
+      $navItems.classList.toggle('max-h-64');
     });
   });
 

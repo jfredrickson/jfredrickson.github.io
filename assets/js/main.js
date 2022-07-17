@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     speed: 250,
     backdropDuration: 100,
     mousewheel: true,
-    selector: '.gallery-image'
+    selector: '.gallery-image',
+    defaultCaptionHeight: 150,
   });
 
 });

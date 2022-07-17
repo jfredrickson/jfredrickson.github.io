@@ -4,9 +4,12 @@ macintosh-resource-forks:
     - type: Type
     - creator: Creator
   content:
-    - file: Disk Copy image (img)
+    - file: Disk Copy image (img, image)
       type: dimg
       creator: ddsk
     - file: StuffIt archive (sit)
       type: SIT!
       creator: SITx
+    - file: Toast CD image (toast)
+      type: hImg
+      creator: CDr3

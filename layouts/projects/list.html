@@ -3,7 +3,7 @@
     {{ .Content }}
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       {{ range .Pages }}
-        <div class="bg-white dark:bg-black rounded-lg shadow-md overflow-hidden">
+        <div class="bg-white dark:bg-stone-900 rounded-lg shadow-md overflow-hidden">
           {{ $title := .Title }}
           {{ $link := .RelPermalink }}
           {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}

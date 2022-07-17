@@ -1,4 +1,4 @@
-<nav class="bg-stone-100 dark:bg-neutral-900 py-4 md:py-6 m-0 font-sans font-bold transition-colors" role="navigation" aria-label="main navigation">
+<nav class="bg-stone-100 dark:bg-stone-900 py-4 md:py-6 m-0 font-sans font-bold transition-colors" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="flex items-center justify-between">
       <a class="text-xl font-['Bungee']" href="/">
@@ -22,7 +22,7 @@
     </div>
 
     <div class="max-h-0 overflow-hidden transition-all duration-300" id="nav-mobile-items">
-      <div class="flex flex-col pt-2 divide-y-2 dark:divide-neutral-800">
+      <div class="flex flex-col pt-2 divide-y-2 dark:divide-stone-800">
         {{ range .Site.Menus.primary }}
           <a class="p-2 flex justify-end text-sm" href="{{ .URL }}">{{ .Name }}</a>
         {{ end }}

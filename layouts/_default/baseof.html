@@ -4,6 +4,7 @@
     <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+    <meta name="theme-color" content="">
 
     {{- $theme := resources.Get "/js/theme.js" | js.Build -}}
     <script type="text/javascript" src="{{ $theme.RelPermalink }}"></script>

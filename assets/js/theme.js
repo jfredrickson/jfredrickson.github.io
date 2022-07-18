@@ -1,17 +1,33 @@
+import tailwindColors from 'tailwindcss/colors';
+
 function updateTheme() {
+  // These should match header background colors
+  const tailwindDark = tailwindColors.neutral['900'];
+  const tailwindLight = tailwindColors.neutral['100'];
+
   const browserPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const userPreference = localStorage.getItem('theme');
-  if (userPreference === 'dark' || ((userPreference === null) && browserPrefersDark)) {
-    document.documentElement.classList.add('dark')
+
+  // Ensure a theme is set
+  if (userPreference === null) {
+    localStorage.setItem('theme', 'auto');
+  }
+
+  // Update the DOM
+  if (userPreference === 'dark' || ((userPreference === 'auto') && browserPrefersDark)) {
+    document.documentElement.classList.add('dark');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', tailwindDark);
   } else {
-    document.documentElement.classList.remove('dark')
+    document.documentElement.classList.remove('dark');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', tailwindLight);
   }
 }
 
 // This executes immediately on load to avoid FOUC
-updateTheme()
+updateTheme();
 
 document.addEventListener('DOMContentLoaded', () => {
+  const buttonActiveClasses = ['bg-white', 'dark:bg-black', 'rounded-b-md'];
 
   const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
   darkModeQuery.addEventListener('change', updateTheme);
@@ -20,39 +36,21 @@ document.addEventListener('DOMContentLoaded', () => {
     $button.addEventListener('click', event => {
       const $menu = $button.parentElement.querySelector('.theme-toggle-menu');
       $menu.classList.toggle('hidden');
-      $button.classList.toggle('is-active');
+      buttonActiveClasses.forEach(className => { $button.classList.toggle(className )});
     });
   });
 
   document.querySelectorAll('.theme-toggle-menu-item').forEach($menuItem => {
     $menuItem.addEventListener('click', event => {
       event.preventDefault();
-      const selectedTheme = $menuItem.dataset.theme;
 
-      if (selectedTheme === 'dark') {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
-
-      if (selectedTheme === 'light') {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-      }
-
-      if (selectedTheme === 'auto') {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-        localStorage.removeItem('theme');
-      }
+      localStorage.setItem('theme', $menuItem.dataset.theme);
+      updateTheme();
 
       const $menu = event.target.closest('.theme-toggle-menu');
       $menu.classList.toggle('hidden');
       const $button = $menu.parentElement.querySelector('.theme-toggle-button');
-      $button.classList.remove('is-active');
+      buttonActiveClasses.forEach(className => { $button.classList.toggle(className )});
     });
   });
-
 });

@@ -1,27 +1,35 @@
 {{ define "main" }}
   <div class="container mt-4">
     {{ .Content }}
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+  </div>
+  <div class="sm:container">
+    <div class="">
       {{ range .Pages }}
-        <div class="bg-white dark:bg-stone-900 rounded-lg shadow-md overflow-hidden">
-          {{ $title := .Title }}
-          {{ $link := .RelPermalink }}
-          {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}
-            {{ $image := .Fit "800x600" }}
-            <a href="{{ $link }}">
-              <img class="object-cover h-48 w-full border-b dark:border-neutral-700" src="{{ $image.RelPermalink }}" alt="Screenshot of {{ $title }}">
-            </a>
-          {{ end }}
-          <div class="p-4">
-            <h2 class="text-base font-[540]"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p>{{ .Description }}.</p>
-            {{ with .Params.Tags }}
-              <div class="flex flex-wrap justify-start mt-1">
-                {{ range . }}
-                  {{- partial "tag" . -}}
-                {{ end }}
-              </div>
+        <div class="flex flex-col sm:flex-row sm:rounded-lg sm:shadow overflow-hidden mb-10">
+          <div class="basis-1/2 sm:order-last">
+            {{ $title := .Title }}
+            {{ $link := .RelPermalink }}
+            {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}
+              {{ $image := .Fit "800x600" }}
+              <a href="{{ $link }}">
+                <img class="object-cover h-full w-full border-y sm:border-y-0 md:border-l dark:border-neutral-800" src="{{ $image.RelPermalink }}" alt="Screenshot of {{ $title }}">
+              </a>
             {{ end }}
+          </div>
+          <div class="basis-1/2 p-4 bg-white dark:bg-neutral-900 border-b dark:border-neutral-800 md:border-none flex flex-col">
+            <h2>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+            <p class="flex-grow">{{ .Description }}.</p>
+            <div class="">
+              {{ with .Params.Tags }}
+                <div class="flex flex-wrap justify-start mt-1">
+                  {{ range . }}
+                    {{- partial "tag" . -}}
+                  {{ end }}
+                </div>
+              {{ end }}
+            </div>
           </div>
         </div>
       {{ end }}

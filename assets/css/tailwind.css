@@ -106,9 +106,9 @@
 }
 
 .kind-home footer, .dark.kind-home footer {
-  @apply bg-transparent text-neutral-700;
+  @apply bg-transparent text-neutral-500;
 }
 
-.kind-home footer, .dark.kind-home footer a {
+.kind-home footer a, .dark.kind-home footer a {
   @apply bg-transparent text-sky-600;
 }

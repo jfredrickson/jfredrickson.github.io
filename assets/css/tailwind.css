@@ -45,7 +45,7 @@
   }
 
   a {
-    @apply text-sky-700 dark:text-sky-300;
+    @apply text-sky-600 dark:text-sky-300;
   }
 
   code {
@@ -87,7 +87,7 @@
   }
 
   .button.primary {
-    @apply bg-cyan-500 hover:bg-cyan-600 transition-colors;
+    @apply bg-sky-600 hover:bg-sky-500 transition-colors;
   }
 }
 
@@ -110,5 +110,5 @@
 }
 
 .kind-home footer, .dark.kind-home footer a {
-  @apply bg-transparent text-sky-700;
+  @apply bg-transparent text-sky-600;
 }

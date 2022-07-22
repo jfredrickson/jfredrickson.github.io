@@ -87,7 +87,7 @@
 
 @layer components {
   .button {
-    @apply px-3.5 py-1.5 text-sm text-white font-sans font-semibold rounded-md;
+    @apply px-3.5 py-1.5 text-sm text-white font-sans font-semibold rounded;
   }
 
   .button.primary {

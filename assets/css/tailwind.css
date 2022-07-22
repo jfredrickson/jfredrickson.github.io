@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply transition-colors duration-100;
+  }
+
   html {
     font-size: 18px;
   }
@@ -14,14 +18,14 @@
   }
 
   body {
-    @apply bg-neutral-50 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-100 leading-6 font-serif transition-colors;
+    @apply bg-neutral-50 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-100 leading-6 font-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply mt-4 font-sans font-bold tracking-tight leading-tight;
   }
 
-  h1 { @apply text-4xl font-extrabold tracking-tighter; }
+  h1 { @apply text-4xl font-extrabold tracking-tighter; font-size: 2.5rem; }
   h2 { @apply text-3xl; }
   h3 { @apply text-2xl; }
   h4 { @apply text-xl; }
@@ -45,11 +49,11 @@
   }
 
   a {
-    @apply text-sky-600 dark:text-sky-300;
+    @apply text-primary-600 dark:text-primary-300;
   }
 
   code {
-    @apply p-0.5 text-xs bg-neutral-100 dark:bg-neutral-900 text-green-800 dark:text-green-300 transition-colors;
+    @apply p-0.5 text-xs bg-neutral-100 dark:bg-neutral-900 text-green-800 dark:text-green-300;
   }
 
   pre {
@@ -87,14 +91,14 @@
   }
 
   .button.primary {
-    @apply bg-sky-600 hover:bg-sky-500 transition-colors;
+    @apply bg-primary-600 hover:bg-primary-500;
   }
 }
 
 /* Unique styles for the home page */
 
 .kind-home nav, .dark.kind-home nav  {
-  @apply bg-transparent text-white;
+  @apply bg-transparent text-white border-0;
 }
 
 .kind-home nav a, .dark.kind-home nav a {
@@ -106,9 +110,9 @@
 }
 
 .kind-home footer, .dark.kind-home footer {
-  @apply bg-transparent text-neutral-500;
+  @apply bg-transparent text-neutral-700;
 }
 
 .kind-home footer a, .dark.kind-home footer a {
-  @apply bg-transparent text-sky-600;
+  @apply bg-transparent text-primary-600;
 }

@@ -1,5 +1,6 @@
 ---
 title: Contact Me
+description: echo "hello" | sendmail jeff
 menu:
   primary:
     name: Contact

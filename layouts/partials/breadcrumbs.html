@@ -1,6 +1,6 @@
 <div class="container">
   <nav aria-label="breadcrumbs">
-    <ul class="p-0 text-xs font-sans list-none">
+    <ul class="p-0 m-0 text-xs font-sans list-none">
       {{ template "breadcrumbItems" (dict "p1" . "p2" .) }}
     </ul>
   </nav>
@@ -11,9 +11,7 @@
     {{ template "breadcrumbItems" (dict "p1" .p1.Parent "p2" .p2) }}
   {{ end }}
 
-  {{ if eq .p1 .p2 }}
-    <li class="inline" aria-current="page">{{ .p1.Title }}</li>
-  {{ else }}
-    <li class="inline"><a href="{{ .p1.RelPermalink }}">{{ .p1.Title }}</a><span class="px-2 after:content-['\02192']"></span></span></li>
+  {{ if and (not .p1.IsHome) (not (eq .p1 .p2)) }}
+    <li class="inline"><a href="{{ .p1.RelPermalink }}">{{ .p1.Title }}</a><span class="px-1 after:content-['\02192']"></span></li>
   {{ end }}
 {{ end }}

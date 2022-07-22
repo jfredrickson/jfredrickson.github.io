@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   darkMode: 'class',
   content: [
@@ -7,7 +10,13 @@ module.exports = {
     './assets/**/*.{css,js}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: colors.sky,
+        secondary: colors.emerald,
+        accent: colors.orange,
+      }
+    },
     backgroundImage: {
       home: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent, transparent, transparent), url("/images/oranjestad.jpg")',
     },

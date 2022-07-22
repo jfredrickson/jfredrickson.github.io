@@ -1,8 +1,5 @@
 {{ define "main" }}
   <div class="container">
-    {{ range .Params.tags }}
-      {{- partial "tag" . -}}
-    {{ end }}
 
     <div class="flex flex-col md:flex-row-reverse md:gap-8">
       <div class="md:w-1/2">

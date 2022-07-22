@@ -20,7 +20,7 @@
             <h2 class="mt-0">
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h2>
-            <p class="flex-grow">{{ .Description }}.</p>
+            <p class="flex-grow">{{ .Description }}{{ if not (strings.HasSuffix .Description ".") }}.{{ end }}</p>
             <div class="">
               {{ with .Params.Tags }}
                 <div class="flex flex-wrap justify-start mt-1">

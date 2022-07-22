@@ -1,0 +1,5 @@
+<div class="container">
+  {{ range .Params.tags }}
+    {{- partial "tag" . -}}
+  {{ end }}
+</div>

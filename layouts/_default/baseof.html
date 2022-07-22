@@ -26,9 +26,8 @@
     <div class="flex flex-col min-h-screen">
 
       {{- block "header" . -}}
-        {{- partial "header.html" . -}}
-        {{- partial "breadcrumbs.html" . -}}
-        {{- partial "title.html" . -}}
+        {{- partial "navigation.html" . -}}
+        {{- partial "top.html" . -}}
       {{- end -}}
 
       <main id="main" class="main flex-grow">

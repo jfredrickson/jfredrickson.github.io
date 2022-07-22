@@ -50,7 +50,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const $menu = event.target.closest('.theme-toggle-menu');
       $menu.classList.toggle('hidden');
       const $button = $menu.parentElement.querySelector('.theme-toggle-button');
-      buttonActiveClasses.forEach(className => { $button.classList.toggle(className )});
+      buttonActiveClasses.forEach(className => { $button.classList.toggle(className) });
     });
   });
+
+  // Detect clicks outside of the theme toggle menu
+  document.addEventListener('click', event => {
+    const menus = Array.from(document.querySelectorAll('.theme-toggle-menu'));
+    const buttons = Array.from(document.querySelectorAll('.theme-toggle-button'));
+    const targetInsideMenu = menus.some($menu => $menu.contains(event.target));
+    const targetInsideButton = buttons.some($button => $button.contains(event.target));
+    if (!targetInsideMenu && !targetInsideButton) {
+      menus.forEach($menu => $menu.classList.add('hidden'));
+      buttons.forEach($button => {
+        buttonActiveClasses.forEach(className => { $button.classList.remove(className) });
+      });
+    }
+  });
+
 });

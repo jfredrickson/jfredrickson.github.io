@@ -477,5 +477,19 @@
         });
       });
     });
+    document.addEventListener("click", (event) => {
+      const menus = Array.from(document.querySelectorAll(".theme-toggle-menu"));
+      const buttons = Array.from(document.querySelectorAll(".theme-toggle-button"));
+      const targetInsideMenu = menus.some(($menu) => $menu.contains(event.target));
+      const targetInsideButton = buttons.some(($button) => $button.contains(event.target));
+      if (!targetInsideMenu && !targetInsideButton) {
+        menus.forEach(($menu) => $menu.classList.add("hidden"));
+        buttons.forEach(($button) => {
+          buttonActiveClasses.forEach((className) => {
+            $button.classList.remove(className);
+          });
+        });
+      }
+    });
   });
 })();

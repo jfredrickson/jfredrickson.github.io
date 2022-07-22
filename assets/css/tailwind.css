@@ -53,7 +53,7 @@
   }
 
   code {
-    @apply p-0.5 text-xs bg-neutral-100 dark:bg-neutral-900 text-green-800 dark:text-green-300;
+    @apply p-0.5 text-xs bg-neutral-100 dark:bg-neutral-900 text-secondary-800 dark:text-secondary-300;
   }
 
   pre {

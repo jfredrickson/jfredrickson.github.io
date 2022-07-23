@@ -22,7 +22,7 @@
             </h2>
             <p class="flex-grow">{{ .Description }}{{ if not (strings.HasSuffix .Description ".") }}.{{ end }}</p>
             <div>
-              {{ range .Params.Tags }}
+              {{ range (.GetTerms "tags") }}
                 {{- partial "tag" . -}}
               {{ end }}
             </div>

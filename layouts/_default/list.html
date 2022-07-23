@@ -5,7 +5,7 @@
       {{ range .Pages }}
         <li>
           <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ range .Params.Tags }}
+          {{ range (.GetTerms "tags") }}
             {{- partial "tag" . -}}
           {{ end }}
         </li>

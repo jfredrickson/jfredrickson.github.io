@@ -1,5 +1,5 @@
 <div class="container">
-  {{ range .Params.tags }}
+  {{ range (.GetTerms "tags") }}
     {{- partial "tag" . -}}
   {{ end }}
 </div>

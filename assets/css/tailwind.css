@@ -57,7 +57,7 @@
   }
 
   pre {
-    @apply p-2 overflow-x-scroll leading-tight rounded-lg;
+    @apply p-2 overflow-x-scroll leading-tight rounded;
   }
 
   pre code {

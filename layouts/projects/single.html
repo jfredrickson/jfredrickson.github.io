@@ -12,10 +12,11 @@
 
       <div class="md:w-1/2">
         {{ .Content }}
+        <h2>Links</h2>
         {{ with .Params.Links }}
           {{ range . }}
             <p>
-              <a href="{{ .href }}">{{ .text }}</a>
+              <a href="{{ .href }}">{{ .text }} ›</a>
             </p>
           {{ end }}
         {{ end }}

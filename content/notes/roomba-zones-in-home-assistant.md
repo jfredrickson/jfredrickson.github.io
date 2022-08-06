@@ -36,7 +36,7 @@ BLID=> ABCDEF0123456789ABCDEF0123456789
 Password=> :1:0123456789:acbdefghijklmnop <= Yes, all this string.
 ```
 
-There's your BLID and password! This BLID and password will be used in the next step authenticate to the Roomba's local API.
+There's your BLID and password! This BLID and password will be used in the next step to authenticate to the Roomba's local API.
 
 Use iRobot's app on your mobile device to tell the Roomba to start vacuuming your custom zone. Immediately after it starts, use this script from `irobot-tools` to find the last command that was issued to the Roomba:
 

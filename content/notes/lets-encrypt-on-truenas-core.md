@@ -1,11 +1,11 @@
 ---
-title: Let's Encrypt on TrueNAS
-description: Automating Let's Encrypt certificates on TrueNAS with Cloudflare DNS authentication
+title: Let's Encrypt on TrueNAS Core
+description: Automating Let's Encrypt certificates with Cloudflare DNS authentication
 tags:
   - truenas
 ---
 
-This is how I use [Let's Encrypt](https://letsencrypt.org/) certificates on TrueNAS with Cloudflare as a DNS authenticator. TrueNAS already has built-in support for ACME DNS authentication, but the only DNS authenticator it supports is Route 53.
+This is how I use [Let's Encrypt](https://letsencrypt.org/) certificates on TrueNAS Core with Cloudflare as a DNS authenticator. TrueNAS Core already has built-in support for ACME DNS authentication, but the only DNS authenticator it supports is Route 53.
 
 This process will create a certbot jail that:
 
@@ -50,7 +50,7 @@ chmod 600 /usr/local/etc/certbot_cloudflare.conf
 # Run certbot to get the certificates for the first time (fill in the domain and email address)
 certbot certonly -d "*.example.com" -m "your.email@example.com" --dns-cloudflare --dns-cloudflare-credentials /usr/local/etc/certbot_cloudflare.conf --preferred-challenges dns-01
 
-# Ensure the deploy script can successfully deploy the certificate to TrueNAS
+# Ensure the deploy script can successfully deploy the certificate to TrueNAS Core
 /opt/deploy-freenas/deploy_freenas.py
 
 # Create a cron job

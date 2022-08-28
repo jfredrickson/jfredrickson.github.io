@@ -6,8 +6,10 @@ module.exports = {
   darkMode: 'class',
   content: [
     './content/**/*.{html,js}',
-    './layouts/**/*.{html,js}',
-    './assets/**/*.{css,js}',
+    './themes/default/layouts/**/*.{html,js}',
+    './themes/retro/layouts/**/*.{html,js}',
+    './themes/default/assets/**/*.{css,js}',
+    './themes/retro/assets/**/*.{css,js}',
   ],
   theme: {
     extend: {
@@ -19,6 +21,7 @@ module.exports = {
     },
     backgroundImage: {
       home: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent, transparent, transparent), url("/images/oranjestad.jpg")',
+      retro: 'url("/images/texture2.gif")',
     },
     container: {
       center: true,
@@ -28,6 +31,7 @@ module.exports = {
       'sans': ['Inter', 'Helvetica Neue', 'sans-serif'],
       'serif': ['Charter', 'serif'],
       'mono': ['monospace'],
+      'serif-retro': ['Times New Roman', 'Times', 'PT Serif', 'serif'],
     },
     fontSize: {
       'xs': '0.75rem',

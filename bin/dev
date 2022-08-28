@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-hugo server --buildDrafts --buildFuture --noHTTPCache --bind 0.0.0.0 --verbose --disableFastRender --ignoreCache

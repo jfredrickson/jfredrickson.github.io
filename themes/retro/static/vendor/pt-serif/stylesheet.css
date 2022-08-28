@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'PT Serif';
+    src: url('ptf55f-webfont.woff2') format('woff2'),
+         url('ptf55f-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('ptf56f-webfont.woff2') format('woff2'),
+         url('ptf56f-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic, oblique;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('ptf75f-webfont.woff2') format('woff2'),
+         url('ptf75f-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Serif';
+    src: url('ptf76f-webfont.woff2') format('woff2'),
+         url('ptf76f-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic, oblique;
+}

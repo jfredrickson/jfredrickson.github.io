@@ -1,0 +1,22 @@
+{{ define "main" }}
+  {{ .Content }}
+  {{ range .Pages }}
+    <hr>
+    <h2>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </h2>
+
+    {{ $title := .Title }}
+    {{ $link := .RelPermalink }}
+    {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}
+      {{ $image := .Fit "320x240" }}
+      <a href="{{ $link }}">
+        <img class="inline" src="{{ $image.RelPermalink }}" alt="Screenshot of {{ $title }}">
+      </a>
+    {{ end }}
+
+    <p>{{ .Description }}{{ if not (strings.HasSuffix .Description ".") }}.{{ end }}</p>
+
+    {{- partial "tags" . -}}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,15 @@
+{{ $name := .Get "name" }}
+{{ $type := .Get "type" }}
+{{ $label := .Get "label" }}
+{{ $required := .Get "required" }}
+
+<div class="my-2">
+  <label class="font-bold" for="form-{{ $name }}">{{ $label }}</label>
+  <div class="mt-0.5">
+    {{- if eq $type "textarea" -}}
+      <textarea id="form-{{ $name }}" class="py-1 px-2 w-full h-40 border" name="{{ $name }}" {{ if $required }}required{{ end }}></textarea>
+    {{- else -}}
+      <input id="form-{{ $name }}" class="py-1 px-2 w-full border" type="{{ $type }}" name="{{ $name }}" {{ if $required }}required{{ end }}>
+    {{- end -}}
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  <head>
+    <title>{{ .Page.Title }} | {{ .Site.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="">
+
+    {{- if .Site.IsServer -}}
+      {{- $random := md5 now.Unix -}}
+      {{- $tailwind := resources.Get "/css/tailwind.css" | resources.PostCSS | resources.ExecuteAsTemplate (printf "tailwind.dev.%s.css" $random) . -}}
+      <link rel="stylesheet" href="{{ $tailwind.RelPermalink }}">
+    {{- else -}}
+      {{- $tailwind := resources.Get "/css/tailwind.css" | resources.PostCSS | resources.Fingerprint | resources.Minify -}}
+      <link rel="stylesheet" href="{{ $tailwind.RelPermalink }}">
+    {{- end -}}
+
+    {{- $css := resources.Get "/css/main.scss" | toCSS -}}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  </head>
+  <body>
+
+    <div class="m-2">
+      {{- block "header" . -}}
+        {{- partial "navigation.html" . -}}
+        {{- partial "top.html" . -}}
+      {{- end -}}
+
+      <main id="main" class="main">
+        {{- block "main" . -}}{{- end -}}
+      </main>
+
+      {{- block "footer" . -}}
+        {{- partial "footer.html" . -}}
+      {{- end -}}
+    </div>
+
+    {{- $js := resources.Get "/js/main.js" | js.Build -}}
+    <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
+
+  </body>
+</html>

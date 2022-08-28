@@ -1,0 +1,9 @@
+<div class="text-center">
+  <h1>{{ .Site.Title }}</h1>
+
+  <a class="" href="/">Home</a>
+  {{ range .Site.Menus.primary }}
+    - <a class="" href="{{ .URL }}">{{ .Name }}</a>
+  {{ end }}
+  <hr>
+</div>

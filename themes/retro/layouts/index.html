@@ -1,0 +1,13 @@
+{{ define "header" }}
+  {{- partial "navigation.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+  {{ with .Content }}
+    {{ . }}
+  {{ end }}
+{{ end }}
+
+{{ define "footer" }}
+  {{- partial "footer.html" . -}}
+{{ end }}

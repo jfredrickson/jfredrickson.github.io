@@ -1,0 +1,4 @@
+{{ range .Site.Data.contact }}
+  <h3>{{ .name }}</h3>
+  <a href="{{ .link }}">{{ .username }}</a>
+{{ end }}

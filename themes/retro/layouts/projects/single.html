@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ $title := .Title }}
+  {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}
+    {{ $image := .Fit "320x240"}}
+    <img class="" src="{{ $image.RelPermalink }}" alt="Screenshot of {{ $title }}">
+  {{ end }}
+  {{ .Content }}
+  <h2>Links</h2>
+  {{ with .Params.Links }}
+    {{ range . }}
+      <p>
+        <a href="{{ .href }}">{{ .text }} ›</a>
+      </p>
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div class="container mt-4">
+    {{ .Content }}
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {{ range .Pages }}
+        {{ $firstPhoto := index (.Resources.ByType "image") 0 }}
+        <div class="bg-white dark:bg-black rounded shadow-md overflow-hidden">
+          {{ $image := $firstPhoto.Fit "800x800" }}
+          <a href="{{ .RelPermalink }}">
+            <img class="object-cover h-48 w-full border-b dark:border-neutral-700" src="{{ $image.RelPermalink }}" alt="Cover photo of {{ .Title }} album">
+          </a>
+          <div class="p-4">
+            <h2 class="text-base font-[540]"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Description }}</p>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}

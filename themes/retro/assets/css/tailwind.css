@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-serif-retro bg-retro bg-repeat;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply mt-4 font-bold;
+  }
+
+  h1 { @apply text-4xl; }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-2xl; }
+  h4 { @apply text-xl; }
+  h5 { @apply text-lg; }
+  h6 { @apply text-base; }
+
+  ul {
+    @apply pl-8 list-disc;
+  }
+
+  ol {
+    @apply pl-8 list-decimal;
+  }
+
+  ul ul, ol ol, ul ol, ol ul {
+    @apply my-1;
+  }
+
+  p, ul, ol, pre, table {
+    @apply my-4;
+  }
+
+  a {
+    color: #0000ee;
+    text-decoration: underline;
+  }
+
+  a:visited {
+    color: #551a8b;
+  }
+
+  hr {
+    @apply my-2;
+    height: 2px;
+    border-width: 2px;
+    border-color: #9d9d9d #dadada #dadada #9d9d9d;
+  }
+
+  table {
+    border-collapse: separate;
+    border-width: 1px;
+    border-color: #dadada #9d9d9d #9d9d9d #dadada;
+  }
+
+  th {
+    border-width: 1px;
+    border-color: #9d9d9d #dadada #dadada #9d9d9d;
+  }
+
+  td {
+    border-width: 1px;
+    border-color: #9d9d9d #dadada #dadada #9d9d9d;
+  }
+}
+
+@layer components {
+  .button {
+    @apply px-3.5 py-0.5;
+    background-color: #c0c0c0;
+    border-width: 2px;
+    border-color: #dadada #9d9d9d #9d9d9d #dadada;
+  }
+
+  .button:active {
+    border-color: #9d9d9d #dadada #dadada #9d9d9d;
+  }
+}

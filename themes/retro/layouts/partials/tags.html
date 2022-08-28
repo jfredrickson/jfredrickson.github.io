@@ -1,0 +1,10 @@
+{{ with $tags := .GetTerms "tags" }}
+  <span class="text-sm">
+    [<span class="italic">Tagged:
+      {{ range $i, $tags := . -}}
+        {{- if $i -}}, {{ end -}}
+        {{- partial "tag" . -}}
+      {{- end -}}
+    </span>]
+  </span>
+{{ end }}

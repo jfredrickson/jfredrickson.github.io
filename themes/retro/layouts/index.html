@@ -3,11 +3,10 @@
 {{ end }}
 
 {{ define "main" }}
-  {{ with .Content }}
-    {{ . }}
-  {{ end }}
-{{ end }}
-
-{{ define "footer" }}
-  {{- partial "footer.html" . -}}
+  <div class="my-10 text-center">
+    <img class="inline" src="/images/construction-spin.gif">
+    <img class="inline" src="/images/construction-bar.gif">
+    <img class="inline" src="/images/construction-spin.gif">
+  </div>
+  {{ .Content }}
 {{ end }}

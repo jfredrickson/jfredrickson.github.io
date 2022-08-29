@@ -33,12 +33,22 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: npm run build
 
-      - name: Deploy
+      - name: Deploy default site
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/main' }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          external_repository: jfredrickson/ejeff-site-default
+          publish_dir: ./public/default
           cname: ejeff.org
+
+      - name: Deploy retro site
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          personal_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          external_repository: jfredrickson/ejeff-site-retro
+          publish_dir: ./public/retro
+          cname: retro.ejeff.org

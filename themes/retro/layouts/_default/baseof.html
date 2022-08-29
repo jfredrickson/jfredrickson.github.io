@@ -35,8 +35,5 @@
       {{- end -}}
     </div>
 
-    {{- $js := resources.Get "/js/main.js" | js.Build -}}
-    <script type="text/javascript" src="{{ $js.RelPermalink }}"></script>
-
   </body>
 </html>

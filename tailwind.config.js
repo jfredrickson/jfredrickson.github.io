@@ -20,7 +20,7 @@ module.exports = {
       }
     },
     backgroundImage: {
-      home: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent, transparent, transparent), url("/images/glacierpoint.jpg")',
+      home: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent, transparent, transparent), url("/images/glacierpoint.jpg")',
       retro: 'url("/images/texture2.gif")',
     },
     container: {

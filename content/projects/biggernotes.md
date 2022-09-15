@@ -6,6 +6,8 @@ tags:
   - swiftui
   - ios
 links:
+  - text: App Store
+    href: https://apps.apple.com/us/app/bigger-notes/id1332341756
   - text: GitHub repository
     href: https://github.com/jfredrickson/biggernotes
 ---
@@ -19,5 +21,3 @@ I set out to create Bigger Notes to satisfy my own needs. I wanted the app to:
 - easily change the text size at any time in case the person I'm communicating with is having difficulty reading what I type
 - load as fast as possible so that I can start a new note without any excessive delays
 - have a readily available delete option, since most of these notes are ephemeral
-
-App Store link coming this fall, hopefully!

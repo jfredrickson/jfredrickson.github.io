@@ -69,3 +69,14 @@ To get the backspace key to work properly on the console (`^H` is a literal Ctrl
 stty erase ^H
 ```
 
+
+## Disable "Solaris User Registration" on OpenWindows or CDE startup
+
+Every time OpenWindows or CDE starts, it launches the HotJava browser to display a Solaris registration page. To stop this:
+
+```sh
+echo DISABLE=1 > /etc/default/solregis
+```
+
+Note: See `/usr/dt/config/Xsession.d/1000.solregis` for the inner workings.
+

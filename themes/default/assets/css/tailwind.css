@@ -32,7 +32,7 @@
   h5 { @apply text-lg; }
   h6 { @apply text-base; }
 
-  ul {
+  ul:not(nav *)  {
     @apply pl-8 list-disc;
   }
 
@@ -40,11 +40,11 @@
     @apply pl-8 list-decimal;
   }
 
-  ul ul, ol ol, ul ol, ol ul {
+  ul:not(nav *) ul, ol ol, ul ol, ol ul {
     @apply my-1;
   }
 
-  p, ul, ol, pre, table {
+  p, ul:not(nav *), ol, pre, table {
     @apply my-4;
   }
 
@@ -101,8 +101,18 @@
   @apply bg-transparent text-white border-0;
 }
 
+/* Site title and navigation menu items */
 .kind-home nav a, .dark.kind-home nav a {
-  @apply text-white border-none hover:bg-transparent;
+  @apply text-white;
+}
+
+.kind-home nav ul {
+  @apply divide-y-0;
+}
+
+/* Navigation menu items only */
+.kind-home nav li a, .dark.kind-home nav li a {
+  @apply hover:text-black hover:bg-white;
 }
 
 .kind-home .theme-toggle-button {

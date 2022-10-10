@@ -1,14 +1,57 @@
 <nav class="py-4 m-0 font-sans font-bold bg-neutral-100 dark:bg-neutral-900 border-b border-neutral-200 dark:border-neutral-800" role="navigation" aria-label="main navigation">
   <div class="container flex flex-wrap items-center justify-between">
-    <a class="inline-flex text-2xl font-['Bungee']" href="/">
+
+    <a class="inline-flex text-lg font-['Bungee']" href="/">
       {{ .Site.Title }}
     </a>
 
+    <div class="flex ml-auto mr-2 justify-center relative">
+      <button type="button" class="theme-toggle-button p-2 md:ml-2 hover:bg-white hover:dark:bg-black hover:rounded-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" class="block dark:hidden h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <!-- heroicons outline sun -->
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="hidden dark:block h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <!-- heroicons outline moon -->
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+        </svg>
+      </button>
+      <ul class="theme-toggle-menu hidden absolute z-50 top-8 px-1 py-1 list-none rounded bg-white dark:bg-black">
+        <li>
+          <a class="theme-toggle-menu-item flex items-center py-1 px-3 text-sm rounded hover:text-white hover:bg-primary-600" data-theme="dark" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <!-- heroicons outline moon -->
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+            <span class="ml-1">Dark</span>
+          </a>
+        </li>
+        <li>
+          <a class="theme-toggle-menu-item flex items-center py-1 px-3 text-sm rounded hover:text-white hover:bg-primary-600" data-theme="light" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <!-- heroicons outline sun -->
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <span class="ml-1">Light</span>
+          </a>
+        </li>
+        <li>
+          <a class="theme-toggle-menu-item flex items-center py-1 px-3 text-sm rounded hover:text-white hover:bg-primary-600" data-theme="auto" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <!-- heroicons outline desktop-computer -->
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span class="ml-1">Auto</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
     <button class="nav-burger inline-flex md:hidden p-2" data-target="main-nav" aria-controls="main-nav" aria-expanded="false">
       <span class="sr-only">Main menu</span>
-      <svg xmlns="http://www.w3.org/2000/svg" class="nav-burger-icon-open h-6 w-6 block" stroke="currentcolor" fill="currentcolor" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" class="nav-burger-icon-close h-6 w-6 hidden" stroke="currentcolor" fill="currentcolor" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
-      <img class="cheezburger h-6 w-6 hidden" src="/images/nav-hamburger.png">
+      <svg xmlns="http://www.w3.org/2000/svg" class="nav-burger-icon-open h-5 w-5 block" stroke="currentcolor" fill="currentcolor" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="nav-burger-icon-close h-5 w-5 hidden" stroke="currentcolor" fill="currentcolor" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+      <img class="cheezburger h-5 w-5 hidden" src="/images/nav-hamburger.png">
     </button>
 
     <div class="max-h-0 md:max-h-full w-full md:w-auto md:inline-flex overflow-hidden md:overflow-visible transition-all duration-300" id="main-nav">
@@ -20,5 +63,6 @@
         {{ end }}
       </ul>
     </div>
+
   </div>
 </nav>

@@ -27,7 +27,7 @@ function updateTheme() {
 updateTheme();
 
 document.addEventListener('DOMContentLoaded', () => {
-  const buttonActiveClasses = ['bg-white', 'dark:bg-black', 'rounded-b'];
+  const buttonActiveClasses = ['bg-white', 'dark:bg-black', 'rounded-t-sm'];
 
   const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
   darkModeQuery.addEventListener('change', updateTheme);

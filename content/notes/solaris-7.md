@@ -57,7 +57,7 @@ The workaround is to disable these two services (assuming you don't need SNMP an
 /etc/rc3.d/S76snmpdx stop
 /etc/rc3.d/S77dmi stop
 mv /etc/rc3.d/S76snmpdx /etc/rc3.d/_disable_S76snmpdx
-mv /etc/rc3.d/S77dmi /etc/rc3.d/_disable_77dmi
+mv /etc/rc3.d/S77dmi /etc/rc3.d/_disable_S77dmi
 ```
 
 

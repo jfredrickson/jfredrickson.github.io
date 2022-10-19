@@ -97,26 +97,23 @@
 
 /* Unique styles for the home page */
 
-.kind-home nav, .dark.kind-home nav  {
-  @apply bg-transparent text-white border-0;
+.kind-home nav, .dark.kind-home nav {
+  @apply bg-transparent border-none;
 }
 
-/* Site title and navigation menu items */
-.kind-home nav a, .dark.kind-home nav a {
+.kind-home .site-title,
+.kind-home .nav-menu-item,
+.kind-home .theme-toggle-button,
+.kind-home .nav-burger {
   @apply text-white;
 }
 
-.kind-home nav ul {
+.kind-home .nav-menu {
   @apply divide-y-0;
 }
 
-/* Navigation menu items only */
-.kind-home nav li a, .dark.kind-home nav li a {
+.kind-home .nav-menu-item, .dark.kind-home .nav-menu-item {
   @apply hover:text-black hover:bg-white;
-}
-
-.kind-home .theme-toggle-button {
-  @apply hidden;
 }
 
 .kind-home footer, .dark.kind-home footer {
@@ -124,5 +121,5 @@
 }
 
 .kind-home footer a, .dark.kind-home footer a {
-  @apply bg-transparent text-primary-300;
+  @apply text-primary-300;
 }

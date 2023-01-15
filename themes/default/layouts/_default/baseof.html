@@ -9,6 +9,8 @@
     {{- $theme := resources.Get "/js/theme.js" | js.Build -}}
     <script type="text/javascript" src="{{ $theme.RelPermalink }}"></script>
 
+    <script defer data-domain="ejeff.org" src="https://plausible.tensouth.net/js/script.js"></script>
+
     {{- if .Site.IsServer -}}
       {{- $random := md5 now.Unix -}}
       {{- $tailwind := resources.Get "/css/tailwind.css" | resources.PostCSS | resources.ExecuteAsTemplate (printf "tailwind.dev.%s.css" $random) . -}}

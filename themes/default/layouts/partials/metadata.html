@@ -1,0 +1,8 @@
+<div class="container">
+  <small class="font-sans">
+    Last update {{ .Lastmod | time.Format .Site.Params.dateFormat }}
+    <i class="fas fa-code-branch text-xs"></i>
+    <a href="https://github.com/jfredrickson/jfredrickson.github.io/commit/{{ .GitInfo.Hash }}" class="font-mono">{{ .GitInfo.AbbreviatedHash }}</a>
+  </small>
+  {{- partial "tags" . -}}
+</div>

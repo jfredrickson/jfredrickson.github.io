@@ -1,5 +1,3 @@
-<div class="container">
-  {{ range (.GetTerms "tags") }}
-    {{- partial "tag" . -}}
-  {{ end }}
-</div>
+{{ range (.GetTerms "tags") }}
+  {{- partial "tag" . -}}
+{{ end }}

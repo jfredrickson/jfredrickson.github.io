@@ -1,5 +1,7 @@
 <div class="mb-2">
   {{- partial "breadcrumbs.html" . -}}
   {{- partial "title.html" . -}}
-  <div>{{- partial "tags.html" . -}}</div>
+  {{ if .IsPage }}
+    <div>{{- partial "metadata.html" . -}}</div>
+  {{ end }}
 </div>

@@ -1,0 +1,5 @@
+<small>
+  Last update {{ .Lastmod | time.Format .Site.Params.dateFormat }}
+  <a href="https://github.com/jfredrickson/jfredrickson.github.io/commit/{{ .GitInfo.Hash }}">{{ .GitInfo.AbbreviatedHash }}</a>
+</small>
+{{- partial "tags" . -}}

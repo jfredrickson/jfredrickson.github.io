@@ -1,5 +1,7 @@
 <div class="py-8 md:py-16 mb-2 md:mb-4 bg-neutral-100 dark:bg-neutral-900">
   {{- partial "breadcrumbs.html" . -}}
   {{- partial "title.html" . -}}
-  {{- partial "tags.html" . -}}
+  {{ if .IsPage }}
+    {{- partial "metadata.html" . -}}
+  {{ end }}
 </div>

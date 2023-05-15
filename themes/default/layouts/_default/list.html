@@ -4,10 +4,8 @@
     <ul>
       {{ range .Pages }}
         <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ range (.GetTerms "tags") }}
-            {{- partial "tag" . -}}
-          {{ end }}
+          <a href="{{ .RelPermalink }}" class="mr-1">{{ .Title }}</a>
+          {{- partial "tags" . -}}
         </li>
       {{ end }}
     </ul>

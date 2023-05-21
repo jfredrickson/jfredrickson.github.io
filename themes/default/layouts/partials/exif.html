@@ -1,0 +1,17 @@
+<small class="font-sans text-neutral-500 dark:text-neutral-400">
+  <span class="mr-2">
+    {{ with .Tags.Make }}{{ . }}{{ end }} {{ with .Tags.Model }}{{ . }}{{ end }}
+  </span>
+  <span class="mr-2">
+    {{ with .Tags.LensModel }}{{ . }}{{ end }}
+  </span>
+  <span class="mr-1">
+    {{ with .Tags.ApertureValue }}f/{{ lang.FormatNumber 1 . }}{{ end }}
+  </span>
+  <span class="mr-1">
+    {{ with .Tags.ExposureTime }}{{ . }}s{{ end }}
+  </span>
+  <span>
+    {{ with .Tags.ISOSpeedRatings }}ISO{{ . }}{{ end }}
+  </span>
+</small>

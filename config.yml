@@ -9,6 +9,20 @@ params:
 taxonomies:
   tag: tags
 
+cascade:
+  - _target:
+      kind: section
+      path: /photos/*
+    layout: list
+  - _target:
+      kind: section
+      path: /photos/*/**
+    layout: album
+  - _target:
+      kind: page
+      path: /photos/*/**
+    layout: single
+
 markup:
   highlight:
     noClasses: false

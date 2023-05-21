@@ -1,18 +1,19 @@
 {{ define "main" }}
-  <div class="container mt-4">
-    {{ .Content }}
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+  <div class="container">
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
       {{ range .Pages }}
         {{ $firstPhoto := index (.Resources.ByType "image") 0 }}
-        <div class="bg-white dark:bg-black rounded shadow-md overflow-hidden">
-          {{ $image := $firstPhoto.Fit "800x800" }}
+        {{ $image := $firstPhoto.Fit "800x800" }}
+        <div class="bg-white dark:bg-black rounded shadow-md relative overflow-hidden">
           <a href="{{ .RelPermalink }}">
-            <img class="object-cover h-48 w-full border-b dark:border-neutral-700" src="{{ $image.RelPermalink }}" alt="Cover photo of {{ .Title }} album">
+            <img class="object-cover z-0 h-64 w-full" src="{{ $image.RelPermalink }}" alt="Cover photo of {{ .Title }} album">
+            <div class="absolute top-0 left-0 z-10 w-full h-full bg-gradient-to-t from-black-alpha-80 via-30% via-transparent"></div>
+            <h2 class="absolute bottom-2 left-2 z-20 text-base text-white dark:text-white">{{ .Title }}</h2>
           </a>
-          <div class="p-4">
-            <h2 class="text-base font-[540]"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p>{{ .Description }}</p>
-          </div>
         </div>
       {{ end }}
     </div>

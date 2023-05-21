@@ -1,0 +1,19 @@
+{{ define "main" }}
+  <div class="container">
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    <ul class="flex flex-wrap list-none p-0 gap-2" id="gallery">
+      {{ range .Pages }}
+        {{ $photo := .Parent.Resources.GetMatch .Params.Photo }}
+        <li class="lg:h-64 lg:grow">
+          <a href="{{ $photo.RelPermalink }}">
+            <img src="{{ $photo.RelPermalink }}" class="min-w-full max-h-full object-cover rounded shadow-md" data-sub-html="{{ .Title }}">
+          </a>
+        </li>
+      {{ end }}
+      <li class="lg:h-64 lg:grow-[10]"><!-- empty list item to consume space on the last row --></li>
+    </ul>
+  </div>
+{{ end }}

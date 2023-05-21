@@ -17,11 +17,11 @@ module.exports = {
         primary: colors.sky,
         secondary: colors.emerald,
         accent: colors.orange,
-      }
-    },
-    backgroundImage: {
-      home: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent, transparent, transparent), url("/images/glacierpoint.jpg")',
-      retro: 'url("/images/texture2.gif")',
+      },
+      backgroundImage: {
+        home: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent, transparent, transparent), linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent, transparent, transparent), url("/images/glacierpoint.jpg")',
+        retro: 'url("/images/texture2.gif")',
+      },
     },
     container: {
       center: true,

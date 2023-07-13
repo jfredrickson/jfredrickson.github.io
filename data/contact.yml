@@ -17,3 +17,9 @@
   iconClass: fa-brands fa-linkedin
   username: Jeff Fredrickson
   link: https://www.linkedin.com/in/jfredrickson5/
+
+- name: Mastodon
+  iconClass: fa-brands fa-mastodon
+  username: "@jf@mastodon.sdf.org"
+  link: "https://mastodon.sdf.org/@jf"
+

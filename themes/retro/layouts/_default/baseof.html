@@ -8,12 +8,12 @@
 
     <script defer data-domain="retro.ejeff.org" src="https://plausible.tensouth.net/js/script.js"></script>
 
-    {{- if .Site.IsServer -}}
+    {{- if hugo.IsServer -}}
       {{- $random := md5 now.Unix -}}
-      {{- $tailwind := resources.Get "/css/tailwind.css" | resources.PostCSS | resources.ExecuteAsTemplate (printf "tailwind.dev.%s.css" $random) . -}}
+      {{- $tailwind := resources.Get "/css/tailwind.css" | css.PostCSS | resources.ExecuteAsTemplate (printf "tailwind.dev.%s.css" $random) . -}}
       <link rel="stylesheet" href="{{ $tailwind.RelPermalink }}">
     {{- else -}}
-      {{- $tailwind := resources.Get "/css/tailwind.css" | resources.PostCSS | resources.Fingerprint | resources.Minify -}}
+      {{- $tailwind := resources.Get "/css/tailwind.css" | css.PostCSS | resources.Fingerprint | resources.Minify -}}
       <link rel="stylesheet" href="{{ $tailwind.RelPermalink }}">
     {{- end -}}
 

@@ -4,8 +4,8 @@
   "description": "Hugo-based ejeff.org website",
   "scripts": {
     "start": "concurrently npm:serve:default npm:serve:retro",
-    "serve:default": "hugo server --buildDrafts --buildFuture --noHTTPCache --bind 0.0.0.0 --port 1313 --verbose --disableFastRender --ignoreCache --config config.yml,config.default.yml",
-    "serve:retro": "hugo server --buildDrafts --buildFuture --noHTTPCache --bind 0.0.0.0 --port 1314 --verbose --disableFastRender --ignoreCache --config config.yml,config.retro.yml",
+    "serve:default": "hugo server --buildDrafts --buildFuture --noHTTPCache --bind 0.0.0.0 --port 1313 --logLevel info --disableFastRender --ignoreCache --config config.yml,config.default.yml",
+    "serve:retro": "hugo server --buildDrafts --buildFuture --noHTTPCache --bind 0.0.0.0 --port 1314 --logLevel info --disableFastRender --ignoreCache --config config.yml,config.retro.yml",
     "build": "npm run build:default && npm run build:retro",
     "build:default": "hugo --config config.yml,config.default.yml",
     "build:retro": "hugo --config config.yml,config.retro.yml"

@@ -2,6 +2,7 @@ baseURL: "https://ejeff.org/"
 title: "Jeff Fredrickson"
 languageCode: "en-US"
 enableGitInfo: true
+capitalizeListTitles: false
 
 params:
   dateFormat: "January 2, 2006"

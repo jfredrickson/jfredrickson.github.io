@@ -5,7 +5,7 @@
   <div class="sm:container">
     <div class="">
       {{ range .Pages }}
-        <div class="flex flex-col sm:flex-row sm:rounded sm:shadow-md overflow-hidden mb-16 sm:mb-10">
+        <div class="flex flex-col sm:flex-row sm:rounded-xs sm:shadow-md overflow-hidden mb-16 sm:mb-10">
           <div class="basis-3/5 sm:order-last">
             {{ $title := .Title }}
             {{ $link := .RelPermalink }}
@@ -20,7 +20,7 @@
             <h2 class="mt-0">
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h2>
-            <p class="flex-grow">{{ .Description }}{{ if not (strings.HasSuffix .Description ".") }}.{{ end }}</p>
+            <p class="grow">{{ .Description }}{{ if not (strings.HasSuffix .Description ".") }}.{{ end }}</p>
             <div>
               {{ range (.GetTerms "tags") }}
                 {{- partial "tag" . -}}

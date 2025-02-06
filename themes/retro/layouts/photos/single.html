@@ -3,7 +3,7 @@
     {{ .Content }}
     <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5" id="gallery">
       {{ range .Resources.ByType "image" }}
-        <div class="bg-white rounded shadow-md w-full aspect-square p-2">
+        <div class="bg-white rounded-xs shadow-md w-full aspect-square p-2">
           {{ $image := .Fit "800x800" }}
           <a href="{{ .RelPermalink }}">
             <img class="gallery-image w-full h-full object-cover border" src="{{ $image.RelPermalink }}" alt="{{ .Title }}" data-src="{{ .RelPermalink }}" data-sub-html="#photo-caption-{{ .Name | anchorize }}">

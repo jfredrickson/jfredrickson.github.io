@@ -8,10 +8,10 @@
       {{ range .Pages }}
         {{ $firstPhoto := index (.Resources.ByType "image") 0 }}
         {{ $image := $firstPhoto.Fit "800x800" }}
-        <div class="bg-white dark:bg-black rounded shadow-md relative overflow-hidden">
+        <div class="bg-white dark:bg-black rounded-xs shadow-md relative overflow-hidden">
           <a href="{{ .RelPermalink }}">
             <img class="object-cover z-0 h-64 w-full" src="{{ $image.RelPermalink }}" alt="Cover photo of {{ .Title }} album">
-            <div class="absolute top-0 left-0 z-10 w-full h-full bg-gradient-to-t from-black-alpha-80 via-30% via-transparent"></div>
+            <div class="absolute top-0 left-0 z-10 w-full h-full bg-linear-to-t from-black-alpha-80 via-30% via-transparent"></div>
             <h2 class="absolute bottom-2 left-2 z-20 text-base text-white dark:text-white">{{ .Title }}</h2>
           </a>
         </div>

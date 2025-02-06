@@ -7,9 +7,9 @@
   <label class="font-bold text-sm font-sans" for="form-{{ $name }}">{{ $label }}</label>
   <div class="mt-0.5">
     {{- if eq $type "textarea" -}}
-      <textarea id="form-{{ $name }}" class="py-1 px-2 w-full h-40 text-black text-sm font-sans dark:bg-neutral-700 dark:text-white dark:border-neutral-500 border rounded-sm" name="{{ $name }}" {{ if $required }}required{{ end }}></textarea>
+      <textarea id="form-{{ $name }}" class="py-1 px-2 w-full h-40 text-black text-sm font-sans dark:bg-neutral-700 dark:text-white dark:border-neutral-500 border rounded-xs" name="{{ $name }}" {{ if $required }}required{{ end }}></textarea>
     {{- else -}}
-      <input id="form-{{ $name }}" class="py-1 px-2 w-full text-black text-sm font-sans dark:bg-neutral-700 dark:text-white dark:border-neutral-500 border rounded-sm" type="{{ $type }}" name="{{ $name }}" {{ if $required }}required{{ end }}>
+      <input id="form-{{ $name }}" class="py-1 px-2 w-full text-black text-sm font-sans dark:bg-neutral-700 dark:text-white dark:border-neutral-500 border rounded-xs" type="{{ $type }}" name="{{ $name }}" {{ if $required }}required{{ end }}>
     {{- end -}}
   </div>
 </div>

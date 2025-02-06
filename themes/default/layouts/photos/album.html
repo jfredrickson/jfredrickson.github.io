@@ -9,11 +9,11 @@
         {{ $photo := .Parent.Resources.GetMatch .Params.Photo }}
         <li class="lg:h-64 lg:grow">
           <a href="{{ $photo.RelPermalink }}">
-            <img src="{{ $photo.RelPermalink }}" class="min-w-full max-h-full object-cover rounded shadow-md" data-sub-html="{{ .Title }}">
+            <img src="{{ $photo.RelPermalink }}" class="min-w-full max-h-full object-cover rounded-xs shadow-md" data-sub-html="{{ .Title }}">
           </a>
         </li>
       {{ end }}
-      <li class="lg:h-64 lg:grow-[10]"><!-- empty list item to consume space on the last row --></li>
+      <li class="lg:h-64 lg:grow-10"><!-- empty list item to consume space on the last row --></li>
     </ul>
   </div>
 {{ end }}

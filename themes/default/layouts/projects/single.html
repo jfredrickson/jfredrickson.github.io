@@ -6,7 +6,7 @@
         {{ $title := .Title }}
         {{ with .Parent.Resources.GetMatch (printf "%s.*" .File.BaseFileName) }}
           {{ $image := .Fit "800x600"}}
-          <img class="mt-6 rounded shadow-md" src="{{ $image.RelPermalink }}" alt="Screenshot of {{ $title }}">
+          <img class="mt-6 rounded-xs shadow-md" src="{{ $image.RelPermalink }}" alt="Screenshot of {{ $title }}">
         {{ end }}
       </div>
 

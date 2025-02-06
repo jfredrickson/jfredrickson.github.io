@@ -3,7 +3,7 @@
   username: "website@ejeff.org"
   link: mailto:website@ejeff.org
 
-- name: GitHub (personal)
+- name: GitHub
   iconClass: fa-brands fa-github
   username: "@jfredrickson"
   link: https://github.com/jfredrickson

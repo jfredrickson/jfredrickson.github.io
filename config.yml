@@ -41,6 +41,8 @@ module:
       target: "static/vendor/fontawesome-free/css"
     - source: "node_modules/@fortawesome/fontawesome-free/webfonts"
       target: "static/vendor/fontawesome-free/webfonts"
+    - source: "node_modules/@fontsource"
+      target: "static/vendor/fontsource"
     - source: "node_modules/lightgallery/css"
       target: "static/vendor/lightgallery/css"
     - source: "node_modules/lightgallery/fonts"

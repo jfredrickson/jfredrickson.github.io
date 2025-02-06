@@ -8,9 +8,9 @@
 @import "../vendor/lightgallery/css/lg-zoom.css";
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap');
-@import '../vendor/charter/fonts/stylesheet.css';
+@import '../vendor/fontsource/bungee/latin.css';
+@import '../vendor/fontsource/inter/latin.css';
+@import '../vendor/fontsource/roboto/latin.css';
 
 // Syntax highlighting
 @import "base16-tomorrow-night";

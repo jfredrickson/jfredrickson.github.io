@@ -1,17 +1,12 @@
 - name: Email
   iconClass: fas fa-envelope
-  username: "website@jeff.ejeff.org"
-  link: mailto:website@jeff.ejeff.org
+  username: "website@ejeff.org"
+  link: mailto:website@ejeff.org
 
 - name: GitHub (personal)
   iconClass: fa-brands fa-github
   username: "@jfredrickson"
   link: https://github.com/jfredrickson
-
-- name: GitHub (work)
-  iconClass: fa-brands fa-github
-  username: "@jfredrickson5"
-  link: https://github.com/jfredrickson5
 
 - name: LinkedIn
   iconClass: fa-brands fa-linkedin
@@ -22,4 +17,3 @@
   iconClass: fa-brands fa-mastodon
   username: "@jf@mastodon.sdf.org"
   link: "https://mastodon.sdf.org/@jf"
-

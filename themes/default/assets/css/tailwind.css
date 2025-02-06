@@ -7,7 +7,7 @@
 @theme {
   --font-*: initial;
   --font-sans: Inter, Helvetica Neue, sans-serif;
-  --font-serif: Charter, serif;
+  --font-body: Roboto, Helvetica Neue, sans-serif;
   --font-mono: monospace;
   --font-serif-retro: Times New Roman, Times, PT Serif, serif;
 
@@ -138,14 +138,14 @@
   } */
 
   body {
-    @apply bg-neutral-50 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-100 leading-6 font-serif;
+    @apply bg-neutral-50 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 leading-6 font-body;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply mt-4 font-sans font-bold tracking-tight leading-tight;
   }
 
-  h1 { @apply text-4xl font-extrabold tracking-tighter; font-size: 2.5rem; }
+  h1 { @apply text-4xl font-extrabold; font-size: 2.5rem; }
   h2 { @apply text-3xl; }
   h3 { @apply text-2xl; }
   h4 { @apply text-xl; }
@@ -173,7 +173,7 @@
   }
 
   code {
-    @apply p-0.5 text-xs bg-neutral-100 dark:bg-neutral-900 text-secondary-800 dark:text-secondary-300;
+    @apply p-0.5 text-sm bg-neutral-100 dark:bg-neutral-900 text-secondary-800 dark:text-secondary-300;
   }
 
   pre {

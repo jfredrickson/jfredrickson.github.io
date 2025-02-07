@@ -10,6 +10,11 @@
   --font-mono: monospace;
   --font-serif-retro: Times New Roman, Times, PT Serif, serif;
   
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
   --background-image-home: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.3),

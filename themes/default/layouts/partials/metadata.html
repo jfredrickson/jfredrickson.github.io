@@ -1,9 +1,17 @@
 <div class="container">
   <small class="font-sans">
-    Updated {{ .Lastmod | time.Format .Site.Params.dateFormat }}
+    {{ if .Date}}
+      Posted {{ .Date | time.Format .Site.Params.dateFormat }}
+    {{ end }}
+    {{ if not (eq .Lastmod .Date) }}
+      {{ if .Date }} / {{ end }}
+      Updated {{ .Lastmod | time.Format .Site.Params.dateFormat }}
+    {{ end }}
     {{ if .GitInfo }}
-      <i class="fas fa-code-branch text-xs"></i>
-      <a href="https://github.com/jfredrickson/jfredrickson.github.io/commit/{{ .GitInfo.Hash }}" class="font-mono">{{ .GitInfo.AbbreviatedHash }}</a>
+      <span class="mx-2">
+        <i class="fas fa-code-branch text-xs"></i>
+        <a href="https://github.com/jfredrickson/jfredrickson.github.io/commit/{{ .GitInfo.Hash }}" class="font-mono">{{ .GitInfo.AbbreviatedHash }}</a>
+      </span>
     {{ end }}
   </small>
   {{- partial "tags" . -}}

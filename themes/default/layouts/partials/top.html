@@ -2,6 +2,8 @@
   {{- partial "breadcrumbs.html" . -}}
   {{- partial "title.html" . -}}
   {{ if .IsPage }}
-    {{- partial "metadata.html" . -}}
+    <div class="container">
+      {{- partial "metadata.html" . -}}
+    </div>
   {{ end }}
 </div>

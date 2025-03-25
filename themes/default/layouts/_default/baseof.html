@@ -9,7 +9,7 @@
     {{- $theme := resources.Get "/js/theme.js" | js.Build -}}
     <script type="text/javascript" src="{{ $theme.RelPermalink }}"></script>
 
-    <script defer data-domain="ejeff.org" src="https://plausible.tensouth.net/js/script.js"></script>
+    <script defer src="https://umami.tensouth.net/script.js" data-website-id="d6f32fd7-38fb-49a5-af56-741eac838d79"></script>
 
     {{- if hugo.IsServer -}}
       {{- $random := md5 now.Unix -}}
